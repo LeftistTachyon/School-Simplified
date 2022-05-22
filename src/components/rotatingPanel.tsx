@@ -17,6 +17,7 @@ type RotatingPanelProps = StackProps & {
 	Element: (r: Record<string, any>) => JSX.Element;
 	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
 	animationType?: AnimationType | AnimationData;
+	duration: number;
 	// animationProps?: Record<string, any>;
 };
 
@@ -109,6 +110,7 @@ export default function RotatingPanel({
 	Element,
 	viewPortHeight,
 	animationType,
+	duration,
 	...props
 }: RotatingPanelProps): JSX.Element {
 	const variant: AnimationData = getVariant(animationType);
@@ -156,7 +158,7 @@ export default function RotatingPanel({
 		prevInterval = setTimeout(
 			() =>
 				setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1),
-			3333
+			duration || 5000
 		);
 		// console.log("initial value: ", prevInterval);
 
