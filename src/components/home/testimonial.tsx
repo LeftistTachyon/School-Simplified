@@ -127,6 +127,7 @@ export default function Intro() {
 							xl: 200,
 						}}
 						animationType="carousel"
+						duration={8000}
 					/>
 				</motion.div>
 			</ContainerInside>
