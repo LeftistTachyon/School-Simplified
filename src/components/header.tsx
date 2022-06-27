@@ -1,6 +1,5 @@
 import {
 	Box,
-	Button,
 	Flex,
 	Heading,
 	HStack,
@@ -9,14 +8,11 @@ import {
 	MenuButton,
 	MenuItem,
 	MenuList,
-	Spacer,
-	Text,
 	useDisclosure,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { useState } from "react";
 
 type MenuItem = {
 	name: string;
@@ -146,7 +142,7 @@ const menuItems: MenuItem[] = [
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
-	const [bannerVisible, setBannerVisible] = useState(true);
+	// const [bannerVisible, setBannerVisible] = useState(true);
 
 	return (
 		<Container
@@ -162,7 +158,7 @@ export default function Header(): JSX.Element {
 			// filter="blur(24px)"
 		>
 			<ContainerInside maxW="none" mx={0}>
-				{bannerVisible && (
+				{/* {bannerVisible && (
 					<Flex
 						bgColor="#FFAC33"
 						color="black"
@@ -195,7 +191,7 @@ export default function Header(): JSX.Element {
 							X
 						</Button>
 					</Flex>
-				)}
+				)} */}
 				<Flex
 					justify="space-between"
 					align="center"
