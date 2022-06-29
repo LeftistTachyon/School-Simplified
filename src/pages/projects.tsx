@@ -94,10 +94,57 @@ export default function Four(): JSX.Element {
 			<Container py="50px">
 				<ContainerInside>
 					<Heading fontSize="35px" textAlign="left">
-						SimpliHacks
+						Upcoming Projects
 					</Heading>
 					<Heading fontSize="22px" textAlign="left">
+						Scholastic Relay Race
+					</Heading>
+					<Text py="15px" fontSize="22px" textAlign="left">
+						Looking to expand your knowledge or stay fresh over the
+						summer? Participate in this challenging
+						time-incentivized competition that caters toward
+						anyone’s interests. Form a team and focus on each of
+						your areas of expertise by tackling our five subjects!
+					</Text>
+					<Stack
+						direction={{ base: "column-reverse", lg: "row" }}
+						align="start"
+						spacing={50}
+					>
+						<VStack align="start" spacing={5}>
+							<Text fontSize="22px" textAlign="left">
+								Not only does the competition accommodate for
+								schedules by taking place over a whole week, but
+								it also offers different age categories to
+								welcome any person who would like to compete.
+								{<br />}
+								{<br />}
+								The Scholastic Relay Race is a team-based,
+								open-internet competition where you can compete
+								with your friends to win tons of prizes! Come
+								join us and experience a fun, engaging
+								competition!
+							</Text>
+							<NextLink
+								isExternal
+								href="/scholasticrr"
+								_hover={{ textDecoration: "none" }}
+							>
+								<Button timmysrc="/timmy/timmy_scroll_icon.png">
+									More Information
+								</Button>
+							</NextLink>
+						</VStack>
+					</Stack>
+				</ContainerInside>
+			</Container>
+			<Container py="50px">
+				<ContainerInside>
+					<Heading fontSize="35px" textAlign="left">
 						Previous Projects
+					</Heading>
+					<Heading fontSize="22px" textAlign="left">
+						SimpliHacks
 					</Heading>
 					<Text py="15px" fontSize="22px" textAlign="left">
 						An example would be Simplihacks, one of the largest
