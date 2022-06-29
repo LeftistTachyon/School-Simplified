@@ -22,17 +22,17 @@ const buttons: ButtonType[] = [
 	{
 		link: "https://forms.gle/vW83UXrRH5QPb24XA",
 		text: "Sign Up",
-		icon: "timmy/timmy_book_icon.png",
+		icon: "/timmy/timmy_book_icon.png",
 	},
 	{
 		link: "https://discord.gg/school",
 		text: "Discord",
-		icon: "timmy/timmy_happy_icon.png",
+		icon: "/timmy/timmy_happy_icon.png",
 	},
 	{
 		link: "https://simplihacks-2.devpost.com/",
 		text: "DevPost",
-		icon: "timmy/timmy_shocked_icon.png",
+		icon: "/timmy/timmy_shocked_icon.png",
 	},
 ];
 
