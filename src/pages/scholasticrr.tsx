@@ -1,4 +1,4 @@
-import { FAQ, Hero, Sponsors } from "../components/scholasticrr";
+import { FAQ, Hero, Sponsors, Staff } from "../components/scholasticrr";
 
 export default function scholasticRR(): JSX.Element {
 	return (
@@ -6,6 +6,7 @@ export default function scholasticRR(): JSX.Element {
 			<Hero />
 			<FAQ />
 			<Sponsors />
+			<Staff />
 		</>
 	);
 }
