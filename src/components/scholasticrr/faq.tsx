@@ -21,7 +21,7 @@ const qaPairs: QAPair[] = [
 	},
 	{
 		question:
-			"What if I have no preeexisting knowledge about any of the subjects?",
+			"What if I have no pre-existing knowledge about any of the subjects?",
 		answer: [
 			{
 				text: "You can still compete as the tests are all open-internet! This means you can use as much Google as you want.",
