@@ -144,14 +144,16 @@ export default function Four(): JSX.Element {
 						Previous Projects
 					</Heading>
 					<Heading fontSize="22px" textAlign="left">
-						SimpliHacks
+						SimpliHacks 2.0
 					</Heading>
 					<Text py="15px" fontSize="22px" textAlign="left">
 						An example would be Simplihacks, one of the largest
 						hackathons in the U.S., which has earned over $100k in
 						prizes! It is a 2-day virtual event, brought to you by
-						School Simplified. We’re bringing it back in February of
-						2022, so stay tuned!
+						Programming Simplified.
+						{<br />}
+						{<br />}
+						We are coming back in June 2023 so stay tuned!
 					</Text>
 					<Stack
 						direction={{ base: "column-reverse", lg: "row" }}
@@ -159,11 +161,11 @@ export default function Four(): JSX.Element {
 						spacing={50}
 					>
 						<Winner
-							image="simplihacks/winners/signslate.png"
-							title="Signslate"
-							award="1st Place Winner from June 2021"
-							winners="Ayush Agarwal, Krushay Bhavsar"
-							link="https://devpost.com/software/signslate"
+							image="simplihacks/winners/pool.png"
+							title="Pool"
+							award="1st Place Winner from June 2022"
+							winners="TJ Bai"
+							link="https://devpost.com/software/pool-8k9dvi"
 						/>
 						<VStack align="start" spacing={5}>
 							<Text fontSize="22px" textAlign="left">
@@ -174,9 +176,6 @@ export default function Four(): JSX.Element {
 								started on your computer science journey.
 								{<br />}
 								{<br />}
-								Want to learn how to make cool websites and
-								apps? Or maybe you just want to learn how to
-								code for fun. We will help you do just that.
 							</Text>
 							<NextLink
 								isExternal
