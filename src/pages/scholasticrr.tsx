@@ -1,7 +1,11 @@
+import { FAQ, Hero, Sponsors } from "../components/scholasticrr";
+
 export default function scholasticRR(): JSX.Element {
 	return (
 		<>
-			<div> Relay Race Page</div>
+			<Hero />
+			<FAQ />
+			<Sponsors />
 		</>
 	);
 }
