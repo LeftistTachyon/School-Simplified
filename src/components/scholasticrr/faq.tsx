@@ -99,7 +99,7 @@ const qaPairs: QAPair[] = [
 		question: "What are the prizes?",
 		answer: [
 			{
-				text: "To be decided!",
+				text: "To be announced!",
 				link: "",
 			},
 		],
@@ -116,7 +116,7 @@ const qaPairs: QAPair[] = [
 				link: "mailto:rachel.yoon@schoolsimplified.org",
 			},
 			{
-				text: "or",
+				text: "or ",
 				link: "",
 			},
 			{
