@@ -8,7 +8,7 @@ const staff: Person[] = [
 	{
 		name: "Aviel Hernandez",
 		title: "Executive Projects Director",
-		img: "/simplihacks/staff/default.png",
+		img: "/scholasticrr/staff/Aviel-Hernandez_EPDLead-Organizer.jpg",
 	},
 	{
 		name: "Rachel Yoon",
