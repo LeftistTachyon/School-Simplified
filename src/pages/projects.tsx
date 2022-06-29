@@ -47,7 +47,7 @@ export default function Four(): JSX.Element {
 								_hover={{ textDecoration: "none" }}
 							>
 								<Box pt="15px">
-									<Button timmysrc="timmy/timmy_paper_icon.svg">
+									<Button timmysrc="/timmy/timmy_paper_icon.svg">
 										Propose Project
 									</Button>
 								</Box>
@@ -136,7 +136,7 @@ export default function Four(): JSX.Element {
 								href="/simplihacks"
 								_hover={{ textDecoration: "none" }}
 							>
-								<Button timmysrc="timmy/timmy_scroll_icon.png">
+								<Button timmysrc="/timmy/timmy_scroll_icon.png">
 									More Information
 								</Button>
 							</NextLink>
