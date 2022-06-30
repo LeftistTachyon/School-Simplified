@@ -91,7 +91,7 @@ export default function Hero(): JSX.Element {
 						<Box flex={1} display={{ base: "none", lg: "block" }}>
 							<Image
 								// minW={350}
-								src="/timmy/timmy_list.png"
+								src="/timmy/Timmy_Essay.png"
 								alt="Timmy holding list"
 							/>
 						</Box>
