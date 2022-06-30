@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Heading, Image, Wrap, WrapItem } from "@chakra-ui/react";
+import { Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
@@ -102,9 +102,7 @@ export default function Sponsors(): JSX.Element {
 							</WrapItem>
 						))}
 					</Wrap>
-					<Heading as="h2" margin={5}>
-						TBD
-					</Heading>
+					<Text margin={5}>TBD</Text>
 				</ContainerInside>
 			</Container>
 		</>
