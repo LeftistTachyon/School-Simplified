@@ -2,7 +2,7 @@ import { Flex, Heading, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import ProjectCard from "@components/simplihacks/projectcard";
-import { ProjectWinner } from "types";
+import type { ProjectWinner } from "types";
 
 const winners: ProjectWinner[] = [
 	{
