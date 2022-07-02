@@ -33,12 +33,16 @@ const qaPairs: QAPair[] = [
 		question: "How do I sign up?",
 		answer: [
 			{
-				text: "Fill out the form here: ",
+				text: "Fill out the form ",
 				link: "",
 			},
 			{
-				text: "https://forms.gle/iUtomK8QscvtGgjy7",
+				text: "here",
 				link: "https://forms.gle/iUtomK8QscvtGgjy7",
+			},
+			{
+				text: "!",
+				link: "",
 			},
 		],
 	},
