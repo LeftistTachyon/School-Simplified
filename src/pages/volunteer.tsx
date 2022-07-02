@@ -22,7 +22,7 @@ import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { JobPosting } from "types";
+import type { JobPosting } from "types";
 
 const defaultOption: string = "Any/All";
 

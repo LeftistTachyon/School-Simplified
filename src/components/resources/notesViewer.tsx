@@ -31,7 +31,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
 // import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import { AllSubjects, NotesProps, Subject } from "types";
+import type { AllSubjects, NotesProps, Subject } from "types";
 import Head from "next/head";
 
 // use minified worker file

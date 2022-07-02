@@ -4,7 +4,7 @@ import { Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { Sponsor } from "types";
+import type { Sponsor } from "types";
 
 const sponsors: Sponsor[] = [
 	// {

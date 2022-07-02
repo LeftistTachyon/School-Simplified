@@ -30,7 +30,7 @@ import { filter } from "fuzzaldrin-plus";
 import { useCallback } from "react";
 import { useEffect, useMemo, useReducer, useState } from "react";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import { Opportunity, ResearchCategory } from "types";
+import type { Opportunity, ResearchCategory } from "types";
 
 type ResearchProps = {
 	opportunities: Opportunity[];
