@@ -25,7 +25,11 @@ import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { ExecutiveGroup, GovernanceDocument, GovernanceSection } from "types";
+import type {
+	ExecutiveGroup,
+	GovernanceDocument,
+	GovernanceSection,
+} from "types";
 import { replaceNewlines } from "util/parse_notion";
 
 type LeadershipPageProps = {

@@ -7,7 +7,7 @@ import {
 	Flex,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
-import { AnswerPart } from "types";
+import type { AnswerPart } from "types";
 
 type FaqItemProps = {
 	question: string;
