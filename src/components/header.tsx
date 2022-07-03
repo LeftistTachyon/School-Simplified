@@ -142,11 +142,7 @@ const menuItems: MenuItem[] = [
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
-<<<<<<< HEAD
 	// const [bannerVisible, setBannerVisible] = useState(true);
-=======
-	const [bannerVisible, setBannerVisible] = useState(false);
->>>>>>> dev
 
 	return (
 		<Container

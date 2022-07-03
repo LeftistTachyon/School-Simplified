@@ -16,7 +16,7 @@ import {
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import { RiSpotifyLine } from "react-icons/ri";
-import type { SpotifyLink } from "types";
+import { SpotifyLink } from "types";
 
 const lofiPlaylists: SpotifyLink[] = [
 	{

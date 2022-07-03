@@ -2,7 +2,7 @@
 /* eslint-disable import/no-default-export */
 import { Accordion } from "@chakra-ui/react";
 import FaqItem from "@components/contact/faq-item";
-import type { QAPair } from "types";
+import { QAPair } from "types";
 
 /**
  * ### Creates a list-like view of all the questions and answers in the FAQ.

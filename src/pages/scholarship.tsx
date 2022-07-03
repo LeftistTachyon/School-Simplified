@@ -4,7 +4,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import RotatingPanel from "@components/rotatingPanel";
-import type { ScholarshipProps } from "types";
+import { ScholarshipProps } from "types";
 import Four from "@pages/404";
 
 export default function Scholarship({

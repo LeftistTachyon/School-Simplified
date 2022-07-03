@@ -1,12 +1,10 @@
-import type { ReactNode } from "react";
-
 export type NotesProps = {
 	title: string;
 	file: FileObj;
 };
 
 export type Subject = {
-	title: string | null;
+	title: string; // may be null
 	content: Class[];
 };
 
@@ -16,13 +14,13 @@ export type Sponsor = {
 };
 
 export type Class = {
-	title: string | null;
+	title: string; // may be null
 	content: Unit[];
 	icon: {
 		type: string;
 		emoji?: string;
 		file?: FileObj;
-	} | null;
+	}; // may be null
 };
 
 export type Unit = {
@@ -208,10 +206,10 @@ export type JobPosting = {
 };
 
 /**
- * A type that represents a person who has a biography on our website.
- * Contains all data that is necessary to display a person card
+ * A type that represents an executive of School Simplified.
+ * Contains all data that is necessary to display to the /leadership page
  */
-export type BiographyInfo = {
+export type Executive = {
 	// ID is not included
 	/**
 	 * Their name, likely as a title case string in Latin letters
@@ -226,6 +224,10 @@ export type BiographyInfo = {
 	 * Try to keep this as a SS website link for optimal loading
 	 */
 	image?: FileObj;
+	/**
+	 * A copy/paste of the Notion-style rich text object that compose their tagline
+	 */
+	// tagline?: any[];
 	/**
 	 * An email that is connected with this person, if applicable
 	 */
@@ -251,25 +253,10 @@ export type BiographyInfo = {
 	 */
 	instagram?: string;
 	/**
-	 * If the type field is `"notion"`, this carries a copy/paste of the
-	 * Notion-style rich text objects that compose their bio
-	 *
-	 * If the type field is `"react"`, this carries a `ReactNode` that
-	 * represents their bio
+	 * A copy/paste of the Notion-style rich text objects that compose their bio
 	 */
-	biography?: BiographyData;
+	biography?: any[];
 };
-
-/**
- * If the type field is `"notion"`, this carries a copy/paste of the
- * Notion-style rich text objects that compose their bio
- *
- * If the type field is `"react"`, this carries a `ReactNode` that
- * represents their bio
- */
-export type BiographyData =
-	| { type: "notion"; data: any[] }
-	| { type: "react"; data: ReactNode };
 
 /**
  * A group of executives
@@ -282,7 +269,7 @@ export type ExecutiveGroup = {
 	/**
 	 * A list of executives under this group/category
 	 */
-	executives: BiographyInfo[];
+	executives: Executive[];
 };
 
 /**

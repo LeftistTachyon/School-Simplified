@@ -8,7 +8,7 @@ import {
 	BlogListing,
 	BlogPage,
 	Class,
-	BiographyInfo,
+	Executive,
 	ExecutiveGroup,
 	FileObj,
 	GovernanceDocument,
@@ -765,7 +765,7 @@ export async function getLeadership(): Promise<ExecutiveGroup[]> {
 
 	for (const exec of allExecs) {
 		const file0 = exec.properties.Image.files?.[0];
-		const newExec: BiographyInfo = {
+		const newExec: Executive = {
 			name: exec.properties.Name.title?.[0]?.plain_text ?? null,
 			title: exec.properties.Title.rich_text?.[0]?.plain_text ?? null,
 			email: exec.properties.Email?.email ?? null,
@@ -774,10 +774,7 @@ export async function getLeadership(): Promise<ExecutiveGroup[]> {
 			instagram: exec.properties.Instagram?.url ?? null,
 			facebook: exec.properties.Facebook?.url ?? null,
 			personalWebsite: exec.properties["Personal Site"]?.url ?? null,
-			biography: {
-				type: "notion",
-				data: exec.properties.Biography.rich_text,
-			},
+			biography: exec.properties.Biography.rich_text,
 			image: file0 ? getFile(file0) : null,
 		};
 

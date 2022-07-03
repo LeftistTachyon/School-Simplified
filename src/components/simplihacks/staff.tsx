@@ -1,7 +1,7 @@
 import { Heading, Wrap } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import type { Person } from "types";
+import { Person } from "types";
 import SimplihacksCard from "./simplihackscard";
 
 const staff: Person[] = [

@@ -20,7 +20,7 @@ import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import { cloneElement, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import type { BlogListing } from "types";
+import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");

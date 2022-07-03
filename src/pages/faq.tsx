@@ -3,7 +3,7 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import type { QASection } from "types";
+import { QASection } from "types";
 
 export default function Contact({
 	qaPairs: qaSections,

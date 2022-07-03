@@ -16,7 +16,7 @@ import TeX from "@matejmazur/react-katex";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { FaPaperclip, FaRegFilePdf, FaVideo } from "react-icons/fa";
-import type { Author, BlogPage, FileObj } from "types";
+import { Author, BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 

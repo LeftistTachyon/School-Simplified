@@ -18,7 +18,7 @@ import {
 	default as NextChakraLink,
 	default as NextLink,
 } from "@components/nextChakra";
-import type { ArtData, SpotifyLink } from "types";
+import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [
 	{

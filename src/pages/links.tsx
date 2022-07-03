@@ -4,7 +4,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Hero from "@components/hero";
 import NextLink from "@components/nextChakra";
-import type { LinkButtonProps } from "types";
+import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
 
 //import Hero from "./volunteer/hero";

@@ -14,7 +14,7 @@ import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import Head from "next/head";
-import type { BlogListing, BlogPage } from "types";
+import { BlogListing, BlogPage } from "types";
 import { parsePage } from "util/parse_notion";
 
 type BlogPageProps = { page: BlogPage; listing: BlogListing };
