@@ -19,16 +19,21 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useMemo } from "react";
 import {
 	FaFacebookSquare,
 	FaInstagram,
 	FaLinkedinIn,
 	FaTwitter,
 } from "react-icons/fa";
+<<<<<<< HEAD
 import { RiMailFill } from "react-icons/ri";
 import { VscGlobe } from "react-icons/vsc";
 import { Executive, FileObj } from "types";
+=======
+import { RiComputerFill, RiMailFill } from "react-icons/ri";
+import type { BiographyData, BiographyInfo, FileObj } from "types";
+>>>>>>> dev
 import { parseText } from "util/parse_notion";
 import Button from "./button";
 import NextChakraLink from "./nextChakra";
@@ -38,7 +43,7 @@ const blurDataURL =
 	"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE5SURBVChTFZDLTsJQFEVXbwVKi4I6McHowPj/M2f8hIkaxQQftNTSUnr77u3Dy3Cf7LPO3sdYrZ6GkdEzGCb5MUIeQtI8Y764wnEcEGNUVXDWKUXXt1SqZbNes1u/IbQ2ZwtuHx5ZLu8wTQNRVyXHJGEfRviuy1z03F9eYA8tnrfD8//IihLh2FMsa0Lf94iu51prZ3TGfDrBGY8wDLAdG5HmOappMPXktGBPJtxo4sw+p2sUJ2fTdIgsKzS6oiwKfT5GFg256vDjlMNRsvMDtu4OIQTUdU0QhrxvfvkIJLIWfLoh3l9EfEyA4UTM2Ho+r88vFJWOYM34inOCJCWtFb8/Hq4fIrZbn6/NN8E+om6hESMOrWAYW+SlNroBSVLoMlJSamquX6DagSAtKTuQOnsiM2pdKIol/52AyDKHj3ObAAAAAElFTkSuQmCC";
 
 type StaffCardProps = {
-	staff: Executive;
+	staff: BiographyInfo;
 } & StackProps;
 
 export default function StaffCard({
@@ -120,7 +125,7 @@ export default function StaffCard({
 			maxW={{ base: 200, lg: 300 }}
 			{...props}
 		>
-			{biography?.length ? (
+			{biography ? (
 				<Center
 					p={17}
 					backgroundColor="brand.transparent"
@@ -165,7 +170,7 @@ export default function StaffCard({
 			</Box>
 
 			{contactMeElement}
-			{biography?.length && (
+			{biography && (
 				<BiographyModal
 					{...{
 						isOpen,
@@ -191,7 +196,7 @@ type BiographyModalProps = {
 	headingSize: string;
 	title: string;
 	contactMeElement: JSX.Element;
-	biography: any[];
+	biography: BiographyData;
 };
 
 function BiographyModal({
@@ -204,6 +209,19 @@ function BiographyModal({
 	contactMeElement,
 	biography,
 }: BiographyModalProps): JSX.Element {
+	const biographyElement = useMemo(() => {
+		switch (biography.type) {
+			case "notion":
+				return biography.data.map((s) =>
+					React.cloneElement(parseText(s), {
+						key: s.plain_text + JSON.stringify(s.annotations),
+					})
+				);
+			case "react":
+				return biography.data;
+		}
+	}, [biography]);
+
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -260,13 +278,7 @@ function BiographyModal({
 							</VStack>
 						</HStack>
 						<Box flex={2} textAlign="left" overflowY="auto" mb={2}>
-							{biography.map((s) =>
-								React.cloneElement(parseText(s), {
-									key:
-										s.plain_text +
-										JSON.stringify(s.annotations),
-								})
-							)}
+							{biographyElement}
 						</Box>
 					</VStack>
 				</ModalBody>
