@@ -17,6 +17,7 @@ import {
 	Select,
 	SimpleGrid,
 	Spacer,
+	Stack,
 	Text,
 	VStack,
 } from "@chakra-ui/react";
@@ -183,7 +184,12 @@ function ResearchViewPane({
 	return (
 		<Container>
 			<ContainerInside>
-				<HStack spacing={5} align="stretch" py={7}>
+				<Stack
+					direction={{ base: "column", md: "row" }}
+					spacing={5}
+					align="stretch"
+					py={7}
+				>
 					<VStack flex="0 0" spacing={0} align="stretch">
 						<HStack spacing={5} p={5}>
 							{/* <TimmyButton minW={100}>Filter</TimmyButton> */}
@@ -260,7 +266,7 @@ function ResearchViewPane({
 							</Text>
 						)}
 					</VStack>
-				</HStack>
+				</Stack>
 			</ContainerInside>
 		</Container>
 	);
