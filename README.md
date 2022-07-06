@@ -2,7 +2,8 @@
 
 ## _Through learning, we empower the next generation to revolutionize the future._
 
-Come visit us at <https://schoolsimplified.org/>!
+Come visit us at <https://schoolsimplified.org/> and our Discord at
+<https://discord.gg/school>!
 
 ### Powered by
 
