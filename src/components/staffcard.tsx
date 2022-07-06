@@ -26,7 +26,8 @@ import {
 	FaLinkedinIn,
 	FaTwitter,
 } from "react-icons/fa";
-import { RiComputerFill, RiMailFill } from "react-icons/ri";
+import { RiMailFill } from "react-icons/ri";
+import { VscGlobe } from "react-icons/vsc";
 import type { BiographyData, BiographyInfo, FileObj } from "types";
 import { parseText } from "util/parse_notion";
 import Button from "./button";
