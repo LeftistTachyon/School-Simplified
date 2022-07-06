@@ -1,8 +1,4 @@
-import {
-	Testimonials,
-	PSprogramming,
-	FAQ,
-} from "@components/programming/index";
+import { Testimonials, PSprogramming, FAQ } from "@components/programming";
 
 export default function Programming(): JSX.Element {
 	return (

@@ -17,7 +17,7 @@ const qaPairs = [
 		question: "How do I get started with courses?",
 		answer: [
 			{
-				text: "To get started, log in with your Discord account and navigate to the Courses page of ",
+				text: "To get started, log in with your Discord account and navigate to the Courses page of Programming Simplified. There, you will have full access to all of our courses.",
 				link: "",
 			},
 			{
@@ -43,7 +43,7 @@ const qaPairs = [
 		question: "How do I earn my certification?",
 		answer: [
 			{
-				text: "Once you have completed a course, you will be able to earn your certification by completing the course's certification exam.",
+				text: "Once you have completed a course, you will be able to earn your certification by taking the course's certification exam.",
 				link: "",
 			},
 		],
@@ -52,7 +52,7 @@ const qaPairs = [
 		question: "How can I contact you?",
 		answer: [
 			{
-				text: "If you have any questions, concers or suggestions, please email ",
+				text: "If you have any questions, concerns or suggestions, please email ",
 				link: "",
 			},
 			{

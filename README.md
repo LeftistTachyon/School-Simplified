@@ -2,10 +2,11 @@
 
 ## _Through learning, we empower the next generation to revolutionize the future._
 
-Come visit us at <https://schoolsimplified.org/> !
+Come visit us at <https://schoolsimplified.org/>!
 
 ### Powered by
 
+-   Node.js
 -   Typescript
 -   Chakra UI
 -   NextJS
@@ -16,7 +17,8 @@ Come visit us at <https://schoolsimplified.org/> !
 
 ## Spinning up local instance
 
-0. Ensure you have node.js installed on your machine.
+0. Ensure you have node.js (the latest LTS version is recommended) installed on
+   your machine.
 1. Clone this repository to your machine.
 2. Install all dependencies with `npm i`.
 3. Run the development server with `npm run dev`.
@@ -26,6 +28,7 @@ Come visit us at <https://schoolsimplified.org/> !
 ## Contributing
 
 If you would like to contribute to our website, place consider joining our web
-team!  
+team! We're actively looking for team members to build even more amazing
+websites.  
 You can find a list of all our open positions
 [here](https://schoolsimplified.org/volunteer).

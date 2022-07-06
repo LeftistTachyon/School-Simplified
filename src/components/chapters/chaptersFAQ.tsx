@@ -8,7 +8,7 @@ const qaPairs = [
 		question: "What are School Simplified Chapters?",
 		answer: [
 			{
-				text: "School Simplified Chapters are student-run, school-affiliated subunits of the School Simplified Chapters Program that aim to further our mission to equalize education.  Chapters do this by bringing our resources to the local level to help disadvantaged students achieve their academic ambitions.",
+				text: "School Simplified Chapters are student-run, school-affiliated subunits of the School Simplified Chapters Program that aim to further our mission to equalize education. Chapters bring our resources to the local level to help disadvantaged students achieve their academic ambitions.",
 				link: "",
 			},
 		],
@@ -35,7 +35,7 @@ const qaPairs = [
 		question: "What is expected of Chapter Members and Presidents?",
 		answer: [
 			{
-				text: "Chapters offer free services to improve their community, usually tutoring, essay revision, or conducting service projects. Although, chapters are free to focus on one or more of these three areas, they can propose their own unique purpose. Chapters must meet at least twice a month and fill out a quarterly report.",
+				text: "Chapters offer free services to improve their community by providing services such as tutoring, essay revisions, or by conducting service projects. Members are free to focus on one or more of these three areas or can propose their own unique purpose. Chapters must meet at least twice a month and fill out a quarterly report.",
 				link: "",
 			},
 		],
@@ -44,7 +44,7 @@ const qaPairs = [
 		question: "How much freedom will School Simplified chapters give me?",
 		answer: [
 			{
-				text: "School Simplified Chapters will allow students to choose their own leadership team and a goal that they would like to pursue.",
+				text: "School Simplified Chapters allow students to choose their own leadership team and a goal they would like to pursue.",
 				link: "",
 			},
 		],
@@ -81,7 +81,7 @@ const qaPairs = [
 		question: "Are there any student membership fees?",
 		answer: [
 			{
-				text: "As of now, national leadership does not collect membership fees. However, individual chapter leadership may opt to collect a maximum fee of $10 per member to further the chapters purpose.",
+				text: "As of now, national leadership (is it national leadership, or national staff?) does not collect membership fees. However, individual chapter leadership may opt to collect a maximum fee of $10 per member to further the Chapter’s purpose.",
 				link: "",
 			},
 		],

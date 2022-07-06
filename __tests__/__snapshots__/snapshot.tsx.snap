@@ -1,0 +1,1203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage 1`] = `
+<div>
+  <div
+    style="opacity: 0; transform: none;"
+  >
+    <section
+      class="css-zw06p"
+      src="/timmy/lofi_timmy.png"
+    >
+      <div
+        class="css-1704nml"
+      >
+        <div
+          class="css-gmuwbf"
+        >
+          <div
+            class="chakra-stack css-m9f830"
+          >
+            <h2
+              class="chakra-heading css-1qtd8t1"
+            >
+              School Simplified:
+            </h2>
+            <h2
+              class="chakra-heading css-in3yi3"
+            >
+              We Inspire Learning
+            </h2>
+            <div
+              class="css-b4hlju"
+            />
+            <p
+              class="chakra-text css-1qwnwpn"
+            >
+              Through learning, we empower the next generation to revolutionize the future.
+            </p>
+          </div>
+        </div>
+        <div
+          class="chakra-stack css-1jepn8g"
+        >
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-owjkmg"
+            >
+              <h2
+                class="chakra-heading css-6orinh"
+              >
+                <span>
+                  0M+
+                </span>
+              </h2>
+              <p
+                class="chakra-text css-i41jwe"
+              >
+                Impressions
+              </p>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-owjkmg"
+            >
+              <h2
+                class="chakra-heading css-6orinh"
+              >
+                <span>
+                  0K+
+                </span>
+              </h2>
+              <p
+                class="chakra-text css-6xix1i"
+              >
+                Community Members
+              </p>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-owjkmg"
+            >
+              <h2
+                class="chakra-heading css-6orinh"
+              >
+                <span>
+                  0
+                </span>
+              </h2>
+              <p
+                class="chakra-text css-6xix1i"
+              >
+                Mission
+              </p>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-owjkmg"
+            >
+              <h2
+                class="chakra-heading css-6orinh"
+              >
+                <span>
+                  0+
+                </span>
+              </h2>
+              <p
+                class="chakra-text css-6xix1i"
+              >
+                Staff Members
+              </p>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-owjkmg"
+            >
+              <h2
+                class="chakra-heading css-6orinh"
+              >
+                <span>
+                  0
+                </span>
+              </h2>
+              <p
+                class="chakra-text css-6xix1i"
+              >
+                Countries
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section
+    class="css-sibsqp"
+  >
+    <div
+      class="css-8p7wbs"
+    >
+      <div
+        class="chakra-stack css-168grej"
+      >
+        <div
+          style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+        >
+          <div
+            class="chakra-stack css-jdio3i"
+          >
+            <h2
+              class="chakra-heading css-0"
+            >
+              Getting Started
+            </h2>
+            <p
+              class="chakra-text css-0"
+            >
+              School Simplified is a 501(c)3 nonprofit organization dedicated to fair, equal, and meaningful learning.
+            </p>
+            <div
+              class="css-1hso0lm"
+            >
+              <a
+                class="chakra-link css-x2q8uz"
+                href="/#acad"
+              >
+                <button
+                  class="css-18iu1dg"
+                >
+                  <div
+                    class="chakra-stack css-84zodg"
+                  >
+                    <img
+                      alt="A small Timmy"
+                      class="chakra-image css-5ul936"
+                      src="/timmy/3.png"
+                    />
+                    <div
+                      class="css-1en42kf"
+                    >
+                      Resources
+                    </div>
+                  </div>
+                </button>
+              </a>
+              <a
+                class="chakra-link css-x2q8uz"
+                href="/community"
+              >
+                <button
+                  class="css-18iu1dg"
+                >
+                  <div
+                    class="chakra-stack css-84zodg"
+                  >
+                    <img
+                      alt="A small Timmy"
+                      class="chakra-image css-5ul936"
+                      src="/timmy/27.png"
+                    />
+                    <div
+                      class="css-1en42kf"
+                    >
+                      Community
+                    </div>
+                  </div>
+                </button>
+              </a>
+              <a
+                class="chakra-link css-x2q8uz"
+                href="/volunteer"
+              >
+                <button
+                  class="css-18iu1dg"
+                >
+                  <div
+                    class="chakra-stack css-84zodg"
+                  >
+                    <img
+                      alt="A small Timmy"
+                      class="chakra-image css-5ul936"
+                      src="/timmy/timmy_flying_icon.png"
+                    />
+                    <div
+                      class="css-1en42kf"
+                    >
+                      Volunteer
+                    </div>
+                  </div>
+                </button>
+              </a>
+              <a
+                class="chakra-link css-x2q8uz"
+                href="/faq"
+              >
+                <button
+                  class="css-18iu1dg"
+                >
+                  <div
+                    class="chakra-stack css-84zodg"
+                  >
+                    <img
+                      alt="A small Timmy"
+                      class="chakra-image css-5ul936"
+                      src="/timmy/1.png"
+                    />
+                    <div
+                      class="css-1en42kf"
+                    >
+                      FAQs
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <img
+          alt="A Timmy with a graduation cap and book pointing towards the text on the left"
+          src="/timmy/homepage_getting_started.png"
+          style="opacity: 0; transform: translateX(100px) translateY(0px) translateZ(0);"
+        />
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-z5ewpk"
+    id="acad"
+  >
+    <div
+      class="css-1fe0lms"
+    >
+      <div
+        class="css-h47494"
+      >
+        <div
+          style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+        >
+          <h2
+            class="chakra-heading css-0"
+          >
+            Academic Services
+          </h2>
+          <h2
+            class="chakra-heading css-1l7mgse"
+          >
+            Digital Program
+          </h2>
+          <p
+            class="chakra-text css-1ve6858"
+          >
+            We provide a broad selection of free resources including tutoring, essay revision, notes, standardized testing preparation, college preparation, and many more. Additionally, with an international community of over 60,000 students, anyone can find a home at School Simplified.
+          </p>
+        </div>
+        <div
+          class="css-lawlos"
+        >
+          <div
+            style="opacity: 0; transform: translateX(100px) translateY(0px) translateZ(0);"
+          >
+            <a
+              class="chakra-link css-p8d8xi"
+              href="/notes"
+            >
+              <div
+                class="chakra-stack css-cz4dzt"
+              >
+                <div
+                  class="css-lfvdax"
+                >
+                  <h2
+                    class="chakra-heading css-0"
+                  >
+                    Notes
+                  </h2>
+                </div>
+                <div
+                  class="chakra-stack css-1cuv6"
+                >
+                  <p
+                    class="chakra-text css-b0qdn7"
+                  >
+                    Master your classes with our extensive notes. We release new notes every week, so even if we do not have what you need now, they may be added in the future! 
+                  </p>
+                  <img
+                    alt="Timmy that accompanies the Notes section of academic sources."
+                    class="chakra-image css-fcngeg"
+                    src="/timmy/17_cowboy.png"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(100px) translateY(0px) translateZ(0);"
+          >
+            <a
+              class="chakra-link css-p8d8xi"
+              href="/essay"
+            >
+              <div
+                class="chakra-stack css-cz4dzt"
+              >
+                <div
+                  class="css-lfvdax"
+                >
+                  <h2
+                    class="chakra-heading css-0"
+                  >
+                    Essay Revision
+                  </h2>
+                </div>
+                <div
+                  class="chakra-stack css-1cuv6"
+                >
+                  <p
+                    class="chakra-text css-b0qdn7"
+                  >
+                    Hard classes? Scholarship Essays? A creative paper? Not a problem. Our essay revision services are open to everyone year-round!
+                  </p>
+                  <img
+                    alt="Timmy that accompanies the Essay Revision section of academic sources."
+                    class="chakra-image css-fcngeg"
+                    src="/timmy/29_cowboy.png"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+          >
+            <a
+              class="chakra-link css-p8d8xi"
+              href="/tutoring"
+            >
+              <div
+                class="chakra-stack css-cz4dzt"
+              >
+                <div
+                  class="css-lfvdax"
+                >
+                  <h2
+                    class="chakra-heading css-0"
+                  >
+                    Tutoring
+                  </h2>
+                </div>
+                <div
+                  class="chakra-stack css-1kmyrgn"
+                >
+                  <p
+                    class="chakra-text css-b0qdn7"
+                  >
+                    Sign up for private tutoring sessions, personalized and offered by top notch students for every subject you need!
+                  </p>
+                  <img
+                    alt="Timmy that accompanies the Tutoring section of academic sources."
+                    class="chakra-image css-fcngeg"
+                    src="/timmy/16_cowboy.png"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+          >
+            <a
+              class="chakra-link css-p8d8xi"
+              href="/discord"
+            >
+              <div
+                class="chakra-stack css-cz4dzt"
+              >
+                <div
+                  class="css-lfvdax"
+                >
+                  <h2
+                    class="chakra-heading css-0"
+                  >
+                    School Help
+                  </h2>
+                </div>
+                <div
+                  class="chakra-stack css-1kmyrgn"
+                >
+                  <p
+                    class="chakra-text css-b0qdn7"
+                  >
+                    Homework can be challenging, but with our homework help service, you can get your questions answered 24/7 with help through private messaging!
+                  </p>
+                  <img
+                    alt="Timmy that accompanies the School Help section of academic sources."
+                    class="chakra-image css-fcngeg"
+                    src="/timmy/24_cowboy.png"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-xf3hc0"
+  >
+    <div
+      class="css-ergcyn"
+    >
+      <div
+        class="css-gmuwbf"
+      >
+        <div
+          class="css-j7qwjs"
+        >
+          <div
+            class="chakra-stack css-n21gh5"
+          >
+            <div
+              style="opacity: 0; transform: translateX(0px) translateY(-100px) translateZ(0);"
+            >
+              <h2
+                class="chakra-heading css-1fealyl"
+              >
+                Start Your
+                 
+                <a
+                  class="chakra-link css-0"
+                  href="/projects"
+                >
+                  Project
+                </a>
+                 Today
+              </h2>
+              <p
+                class="chakra-text css-1pn68nl"
+              >
+                Take the chance to showcase your capability, creativity, and ideas while receiving community service hours and possibly becoming a project manager!
+              </p>
+            </div>
+            <div
+              style="opacity: 0; transform: translateX(0px) translateY(100px) translateZ(0);"
+            >
+              <div
+                class="css-xpst0e"
+              >
+                <div
+                  class="chakra-stack css-1sigv9r"
+                >
+                  <div
+                    class="chakra-stack css-1fk9u7t"
+                  >
+                    <h2
+                      class="chakra-heading css-16iqw5x"
+                    >
+                      What is a Project?
+                    </h2>
+                    <p
+                      class="chakra-text css-idprao"
+                    >
+                      A project is a temporary initiative undertaken to further School Simplified's mission of revolutionizing the future through learning!
+                    </p>
+                    <p
+                      class="chakra-text css-idprao"
+                    >
+                      Projects can include almost anything from hackathons, advocacy campaigns, competitive startups, and more!
+                    </p>
+                    <div
+                      class="chakra-stack css-10wic73"
+                    >
+                      <a
+                        class="chakra-link css-11ed9a4"
+                        href="https://forms.gle/fyP8RPFqtWNC4AY68"
+                        rel="noopener"
+                        target="_blank"
+                      >
+                        <button
+                          class="css-v2f8ao"
+                        >
+                          <div
+                            class="chakra-stack css-84zodg"
+                          >
+                            <img
+                              alt="A small Timmy"
+                              class="chakra-image css-5ul936"
+                              src="/timmy/10.png"
+                            />
+                            <div
+                              class="css-1en42kf"
+                            >
+                              Propose Project
+                            </div>
+                          </div>
+                        </button>
+                      </a>
+                      <a
+                        class="chakra-link css-11ed9a4"
+                        href="/projects"
+                        rel="noopener"
+                        target="_blank"
+                      >
+                        <button
+                          class="css-v2f8ao"
+                        >
+                          <div
+                            class="chakra-stack css-84zodg"
+                          >
+                            <img
+                              alt="A small Timmy"
+                              class="chakra-image css-5ul936"
+                              src="/timmy/17.png"
+                            />
+                            <div
+                              class="css-1en42kf"
+                            >
+                              Learn More
+                            </div>
+                          </div>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="css-19hs9p1"
+                  />
+                  <img
+                    alt="Timmy with a computer"
+                    class="chakra-image css-15l7civ"
+                    src="/timmy/projectstimmy.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-109zy4c"
+  >
+    <div
+      class="css-rtj8e2"
+    >
+      <div
+        class="css-4pqftp"
+      >
+        <div
+          style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+        >
+          <h2
+            class="chakra-heading css-0"
+          >
+            Bring School Simplified To Your Community
+          </h2>
+          <h2
+            class="chakra-heading css-1l7mgse"
+          >
+            <a
+              class="chakra-link css-sjt5nk"
+              href="/chapter"
+            >
+              Chapters Program
+            </a>
+          </h2>
+        </div>
+        <div
+          class="chakra-stack css-1c34pxl"
+        >
+          <div
+            class="css-1agcla8"
+          >
+            <iframe
+              height="300"
+              src="https://www.google.com/maps/d/embed?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&ehbc=2E312F"
+              width="450"
+            />
+          </div>
+          <div
+            class="css-l6838c"
+          >
+            <div
+              class="css-qd1hdc"
+            >
+              <div
+                class="chakra-stack css-fdjt9v"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Motivated students from around the world are able to gain leadership experience, conduct service projects, and help others progress in their academics.
+                </p>
+                <p
+                  class="chakra-text css-0"
+                >
+                  Chapters can offer any service, including tutoring, essay revision, and college resources. Each chapter is free to focus on one or more areas of interest.
+                </p>
+                <a
+                  class="chakra-link css-sjt5nk"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSesSX3Lislu9m6j_Cgwu3eALgAm0RJ1iTvxcGih82B0J0iXmg/viewform?usp=sf_link"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <button
+                    class="css-v2f8ao"
+                  >
+                    <div
+                      class="chakra-stack css-84zodg"
+                    >
+                      <img
+                        alt="A small Timmy"
+                        class="chakra-image css-5ul936"
+                        src="/timmy/timmy_globe_icon.png"
+                      />
+                      <div
+                        class="css-1en42kf"
+                      >
+                        Apply Now
+                      </div>
+                    </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div
+              style="position: absolute; grid-column: 1; grid-row: 1; width: 100%; height: 100%; opacity: 0; transform: translateX(100px) translateY(0px) translateZ(0);"
+            >
+              <div
+                class="chakra-stack css-fdjt9v"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Motivated students from around the world are able to gain leadership experience, conduct service projects, and help others progress in their academics.
+                </p>
+                <p
+                  class="chakra-text css-0"
+                >
+                  Chapters can offer any service, including tutoring, essay revision, and college resources. Each chapter is free to focus on one or more areas of interest.
+                </p>
+                <a
+                  class="chakra-link css-sjt5nk"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSesSX3Lislu9m6j_Cgwu3eALgAm0RJ1iTvxcGih82B0J0iXmg/viewform?usp=sf_link"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <button
+                    class="css-v2f8ao"
+                  >
+                    <div
+                      class="chakra-stack css-84zodg"
+                    >
+                      <img
+                        alt="A small Timmy"
+                        class="chakra-image css-5ul936"
+                        src="/timmy/timmy_globe_icon.png"
+                      />
+                      <div
+                        class="css-1en42kf"
+                      >
+                        Apply Now
+                      </div>
+                    </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-zuwr8x"
+  >
+    <div
+      class="css-1fe0lms"
+    >
+      <div
+        class="chakra-stack css-1y0m8pl"
+      >
+        <div
+          class="css-1s0v0zm"
+        >
+          <div
+            style="opacity: 0; transform: translateX(-100px) translateY(0px) translateZ(0);"
+          >
+            <div
+              class="css-hfyha"
+            >
+              <h2
+                class="chakra-heading css-0"
+              >
+                Learn to apply code.
+              </h2>
+              <a
+                class="chakra-link css-0"
+                href="/programming"
+              >
+                <h2
+                  class="chakra-heading css-1l7mgse"
+                >
+                  Programming Simplified Program
+                </h2>
+              </a>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(100px) translateY(0px) translateZ(0);"
+          >
+            <a
+              class="chakra-link css-sjt5nk"
+              href="https://programmingsimplified.org/"
+              target="_blank"
+            >
+              <button
+                class="css-v2f8ao"
+              >
+                <div
+                  class="chakra-stack css-84zodg"
+                >
+                  <img
+                    alt="A small Timmy"
+                    class="chakra-image css-5ul936"
+                    src="/timmy/29.png"
+                  />
+                  <div
+                    class="css-1en42kf"
+                  >
+                    Enroll Now
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div
+          style="opacity: 0; transform: none;"
+        >
+          <div
+            class="css-1agfpfo"
+          >
+            <p
+              class="chakra-text css-1uk4hz3"
+            >
+              Learn how to code and create your own real-life applications from experienced instructors from all around the world for free, forever!
+            </p>
+          </div>
+        </div>
+        <div
+          class="css-dw4il4"
+        >
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-12idj1m"
+            >
+              <p
+                class="chakra-text css-a4t5nn"
+              >
+                Create your own websites from scratch by learning the basics of TypeScript, React, and Chakra UI!
+              </p>
+              <div
+                class="css-1y00rtl"
+              >
+                <h2
+                  class="chakra-heading css-0"
+                >
+                  Website Development with Next.js
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-12idj1m"
+            >
+              <p
+                class="chakra-text css-a4t5nn"
+              >
+                Create an interactive Discord Bot using the latest features exposed by the discord API with TypeScript and NodeJS!
+              </p>
+              <div
+                class="css-1y00rtl"
+              >
+                <h2
+                  class="chakra-heading css-0"
+                >
+                  Discord: Bot Development
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-12idj1m"
+            >
+              <p
+                class="chakra-text css-a4t5nn"
+              >
+                Discover the basics of object-oriented programming with the Java programming language!
+              </p>
+              <div
+                class="css-1y00rtl"
+              >
+                <h2
+                  class="chakra-heading css-0"
+                >
+                  Java 101: The Basics
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+          >
+            <div
+              class="chakra-stack css-12idj1m"
+            >
+              <p
+                class="chakra-text css-a4t5nn"
+              >
+                Form professional coding skills with the basics of Python and build a foundation that can be applied anywhere!
+              </p>
+              <div
+                class="css-1y00rtl"
+              >
+                <h2
+                  class="chakra-heading css-0"
+                >
+                  Python 101: The Basics
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="css-1ds30ey"
+  >
+    <div
+      class="css-xxdel5"
+    >
+      <div
+        style="opacity: 0; transform: translateX(0px) translateY(-50px) translateZ(0);"
+      >
+        <h1
+          class="chakra-heading css-h82jag"
+        >
+          Your Success is Our Success!
+        </h1>
+        <p
+          class="chakra-text css-y213yr"
+        >
+          School Simplified believes that quality education should be accessible to everyone with equal opportunity. As an organization run by students from around the world we know exactly what you need to succeed! Take advantage of that and let us help you!
+        </p>
+      </div>
+      <div
+        style="width: 0%;"
+      >
+        <hr
+          aria-orientation="horizontal"
+          class="chakra-divider css-knkgs7"
+        />
+      </div>
+      <div
+        style="opacity: 0; transform: translateX(0px) translateY(50px) translateZ(0);"
+      >
+        <h1
+          class="chakra-heading css-h82jag"
+        >
+          Don't Believe Us?
+        </h1>
+        <p
+          class="chakra-text css-6un3ch"
+        >
+          Ask some of our students and hear what they have to say!
+        </p>
+      </div>
+      <div
+        style="opacity: 0; transform: none;"
+      >
+        <div
+          class="chakra-stack css-1h74pmj"
+        >
+          <div
+            class="css-1pkbkq0"
+          >
+            <div
+              style="opacity: 1; z-index: 1; transform: none;"
+            >
+              <div
+                class="css-1orapwu"
+              >
+                <p
+                  class="chakra-text css-1sv8kd4"
+                >
+                  "
+                  They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, thank you!
+                  "
+                </p>
+                <div
+                  class="css-1u7c4dj"
+                >
+                  <h1
+                    class="chakra-heading css-1gbl7gm"
+                  >
+                    Dak
+                  </h1>
+                  <p
+                    class="chakra-text css-1sv8kd4"
+                  >
+                    Freshman
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chakra-stack css-qeqahp"
+          >
+            <div
+              class="css-ewrdw4"
+            >
+              <svg
+                class="chakra-icon css-1vp16hi"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+                />
+              </svg>
+            </div>
+            <div
+              class="css-p8fj1p"
+            >
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-zx1892"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="css-1w3riw2"
+              >
+                <svg
+                  class="chakra-icon css-bkl033"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="css-ewrdw4"
+            >
+              <svg
+                class="chakra-icon css-1vp16hi"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

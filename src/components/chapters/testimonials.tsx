@@ -74,11 +74,11 @@ export default function Testimonials(): JSX.Element {
 								</Heading>
 								<Text>
 									School Simplified Chapters are here to help
-									you acheive your academic goals
+									you achieve your academic goals.
 								</Text>
 								<Text>
-									Here are some qualities that distingush our
-									chapters from any others:
+									Here are some qualities that distinguish our
+									chapters from others:
 								</Text>
 							</Stack>
 							<Spacer

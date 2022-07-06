@@ -1,12 +1,11 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable sonarjs/no-duplicate-string */
-import { getGovernanceData } from "@api/notion";
+import { getGovernanceData, getLeadership } from "@api/notion";
 import {
 	Box,
 	BoxProps,
 	Center,
 	Divider,
 	Flex,
+	Grid,
 	Heading,
 	HStack,
 	SimpleGrid,
@@ -18,7 +17,6 @@ import {
 	Th,
 	Thead,
 	Tr,
-	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -27,11 +25,31 @@ import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { GovernanceDocument, GovernanceSection, Person } from "types";
+import type {
+	ExecutiveGroup,
+	GovernanceDocument,
+	GovernanceSection,
+} from "types";
+import { replaceNewlines } from "util/parse_notion";
 
-export default function About({ data }: { data: any }): JSX.Element {
+type LeadershipPageProps = {
+	governance: GovernanceSection[];
+	executives: ExecutiveGroup[];
+	boardOfDirectors: ExecutiveGroup;
+};
+
+export default function Leadership({
+	governance,
+	executives,
+	boardOfDirectors,
+}: LeadershipPageProps): JSX.Element {
 	const [groupIdx, setGroupIdx] = useState(0);
-	const isVertical = useBreakpointValue({ base: true, md: false });
+
+	// console.log("executives:", executives);
+	// console.log("board of directors:", boardOfDirectors);
+
+	const indexArray = Array.from(executives, (_, i) => "idx" + i);
+
 	return (
 		<>
 			<Container>
@@ -43,19 +61,30 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<Divider bg="white" />
 					<Center my={5}>
 						<SimpleGrid
-							columns={{ base: 1, md: peopleGroups.length }}
-							rounded={24}
+							rounded={{ base: 24, md: "full" }}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
-							position="relative"
+							gridTemplateColumns={{
+								base: "1fr",
+								md: `repeat(${executives.length}, 1fr)`,
+							}}
+							gridTemplateRows={{
+								base: `repeat(${executives.length}, 1fr)`,
+								md: "1fr",
+							}}
+							gridTemplateAreas={{
+								base: indexArray.map((s) => `'${s}'`).join(" "),
+								md: `'${indexArray.join(" ")}'`,
+							}}
+							placeContent="stretch"
 						>
-							{peopleGroups.map((personGroup, idx) => (
+							{executives.map((executiveGroup, idx) => (
 								<ExecutiveButton
 									onClick={() => setGroupIdx(idx)}
-									key={personGroup.name}
-									gridRow={isVertical ? idx + 1 : 1}
-									gridColumn={isVertical ? 1 : idx + 1}
+									key={executiveGroup.name}
+									gridRow={{ base: idx + 1, md: 1 }}
+									gridColumn={{ base: 1, md: idx + 1 }}
 								>
 									<AnimatePresence>
 										<Heading
@@ -63,31 +92,34 @@ export default function About({ data }: { data: any }): JSX.Element {
 											size="md"
 											as="h3"
 										>
-											{personGroup.name}
+											{executiveGroup.name}
 										</Heading>
 									</AnimatePresence>
 								</ExecutiveButton>
 							))}
 							<motion.div
 								style={{
-									gridRow: isVertical ? groupIdx + 1 : 1,
-									gridColumn: isVertical ? 1 : groupIdx + 1,
+									gridArea: "idx" + groupIdx,
 								}}
 								transition={{ duration: 0.7 }}
 								layout
 							>
 								<Box
 									background="white"
-									rounded={24}
+									rounded={{ base: 24, md: "full" }}
 									px={12}
 									py={3.5}
+									h="100%"
+									w="100%"
+									display="grid"
+									placeContent="center"
 								>
 									<AnimatePresence exitBeforeEnter>
 										<motion.div
 											initial={{ opacity: 0 }}
 											animate={{ opacity: 1 }}
 											exit={{ opacity: 0 }}
-											key={peopleGroups[groupIdx].name}
+											key={executives[groupIdx].name}
 											transition={{ duration: 0.3 }}
 										>
 											<Heading
@@ -95,7 +127,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 												size="md"
 												color="brand.darkerBlue"
 											>
-												{peopleGroups[groupIdx].name}
+												{executives[groupIdx].name}
 											</Heading>
 										</motion.div>
 									</AnimatePresence>
@@ -106,18 +138,19 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
 					</Heading>
-					<Flex justifyContent="center" flexWrap="wrap">
-						{peopleGroups[groupIdx].people.map((staff: Person) => {
+					<Grid
+						gap={1}
+						templateColumns="repeat(auto-fit,minmax(200px,1fr))"
+					>
+						{executives[groupIdx].executives.map((staff) => {
 							return (
 								<StaffCard
-									title={staff.title}
-									name={staff.name}
-									img={staff.img}
-									key={staff.img}
+									staff={staff}
+									key={staff.image?.url || staff.name}
 								/>
 							);
 						})}
-					</Flex>
+					</Grid>
 
 					<Divider bg="white" />
 
@@ -136,12 +169,12 @@ export default function About({ data }: { data: any }): JSX.Element {
 							</Tr>
 						</Thead>
 						<Tbody>
-							{boardOfDirectors.map((staff) => (
-								<Tr key={staff.name}>
-									<Td fontWeight="bold" fontSize={20}>
-										{staff.name}
+							{boardOfDirectors.executives.map((staff) => (
+								<Tr key={staff.name} fontSize={20}>
+									<Td fontWeight="bold">{staff.name}</Td>
+									<Td lineHeight={1.4}>
+										{replaceNewlines(staff.title)}
 									</Td>
-									<Td fontSize={20}>{staff.title}</Td>
 								</Tr>
 							))}
 						</Tbody>
@@ -180,7 +213,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 						mt={5}
 						flexDir={{ base: "column", sm: "row" }}
 					>
-						{data.map((section: GovernanceSection) => {
+						{governance.map((section: GovernanceSection) => {
 							return (
 								<Stack key={section.title} flex={1} my={3}>
 									<Heading fontSize={20}>
@@ -210,256 +243,32 @@ export default function About({ data }: { data: any }): JSX.Element {
 	);
 }
 
-export async function getServerSideProps() {
-	const data = await getGovernanceData();
-	return {
-		props: {
-			data,
-		},
-	};
-}
-
-type PeopleGroup = {
-	name: string;
-	people: Person[];
+const order = {
+	"Corporate Officers": 0,
+	"Vice Presidents": 1,
+	Directors: 2,
 };
 
-const corporateOfficers: Person[] = [
-	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer & President",
-		img: "/staff/EthanHsu.jpg",
-	},
-	{
-		name: "Masa Murry",
-		title: "Chief Operating Officer",
-		img: "/staff/MasaMurry.jpg",
-	},
-	// {
-	// 	name: "Lauren Hsieh",
-	// 	title: "Chief of Staff & Corporate Secretary ",
-	// 	img: "/staff/LaurenHsieh.jpg",
-	// },
-	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer",
-		img: "/staff/ParamPatil.jpg",
-	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Chief Human Resources Officer",
-		img: "/staff/AnncineLin.jpg",
-	},
-	// {
-	// 	name: "Jason Mei",
-	// 	title: "Executive Vice President of Information Technology",
-	// 	img: "/staff/JasonMei.jpg",
-	// },
-	// {
-	// 	name: "Diana Zheng",
-	// 	title: "Corporate Treasurer",
-	// 	img: "/staff/DianaZheng.jpg",
-	// },
-	{
-		name: "Sabrina Zhang",
-		title: "Executive Assisstant to CEO",
-		img: "/staff/SabrinaZhang.jpg",
-	},
-	{
-		name: "Annette Lin",
-		title: "Editor in Chief",
-		img: "/staff/AnnetteLin.jpg",
-	},
-	// {
-	// 	name: "Zach Martin",
-	// 	title: "President of School Simplified Digital",
-	// 	img: "/staff/ZachMartin.jpg",
-	// },
-	{
-		name: "Brandon Woo",
-		title: "Chief Information Officer",
-		img: "/staff/BrandonWoo.jpg",
-	},
-	{
-		name: "Kyle Chen",
-		title: "Chief Financial Officer",
-		img: "/staff/KyleChen.jpg",
-	},
-	// {
-	// 	name: "Krishanu Datta",
-	// 	title: "Senior Vice President of IT",
-	// 	img: "/staff/KrishanuDatta.jpg",
-	// },
-];
+export async function getServerSideProps() {
+	const governance = await getGovernanceData();
+	const executives = await getLeadership();
 
-const divisionPresidents: Person[] = [
-	{
-		name: "Bhavyasri Suggula",
-		title: "Executive Projects Director",
-		img: "/staff/BhavyasriSuggula.jpg",
-	},
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities",
-		img: "/staff/AarushGoradia.jpg",
-	},
-	{
-		name: "Maya Murry",
-		title: "President of Research Simplified",
-		img: "/staff/MayaMurry.jpg",
-	},
-	// {
-	// 	name: "Jiahao Zhang",
-	// 	title: "Global Vice President of Advancement",
-	// 	img: "/staff/JiahaoZhang.jpg",
-	// },
-	// {
-	// 	name: "Yasmeen Elkheir",
-	// 	title: "Vice President of Operations, Programming Simplified",
-	// 	img: "/staff/YasmeenElkheir.jpg",
-	// },
-	// {
-	// 	name: "Isamar Zhu",
-	// 	title: "Vice President of Staff, Programming Simplified",
-	// 	img: "/staff/IsamarZhu.jpg",
-	// },
-	// {
-	// 	name: "Josh Schram",
-	// 	// name: "Josh Schram",
-	// 	title: "Vice President of Academics, Digital",
-	// 	img: "/staff/JoshSchram.jpg",
-	// },
-	// {
-	// 	name: "Rohit Choudhary",
-	// 	title: "Vice President of Academics, Digital",
-	// 	img: "/staff/RohitChoudhary.jpg",
-	// },
+	// extract board of directors
+	const boardIdx = executives.findIndex(
+		(group) => group.name === "Board of Directors"
+	);
+	const [boardOfDirectors] = executives.splice(boardIdx, 1);
 
-	// {
-	// 	name: "Rohit Penta",
-	// 	title: "Vice President of Technology, Digital",
-	// 	img: "/staff/RohitPenta.jpg",
-	// },
-	// {
-	// 	name: "Max Konzerowsky",
-	// 	title: "Vice President of Information-Technology, School Simplified Digital",
-	// 	img: "/staff/MaxKonzerowsky.jpg",
-	// },
-	// {
-	// 	name: "Nicholas Zhang",
-	// 	title: "Vice President of Information-Technology, School Simplified Digital",
-	// 	img: "/staff/NicholasZhang.jpg",
-	// },
+	executives.sort((a, b) => order[a.name] - order[b.name]);
 
-	// {
-	// 	name: "Sophia Bhatia",
-	// 	title: "Vice President of Community Engagement",
-	// 	img: "/staff/soape.jpg",
-	// },
-	// {
-	// 	name: "Noah Bondi",
-	// 	title: "National VP of Communications (Chapters)",
-	// 	img: "/staff/NoahBondi.jpg",
-	// },
-	// {
-	// 	name: "Vivek Anandh",
-	// 	title: "Vice President of Information-Technology, National Chapters",
-	// 	img: "/staff/VivekAnandh.jpg",
-	// },
-	// {
-	// 	name: "Gavin Hecock",
-	// 	title: "Vice President of Student Activities",
-	// 	img: "/staff/GavinHecock.jpg",
-	// },
-	// {
-	// 	name: "Christina Dong",
-	// 	title: "Vice President of Marketing, National Chapters",
-	// 	img: "/staff/ChristinaDong.jpg",
-	// },
-	// {
-	// 	name: "Adrian Sucahyo",
-	// 	title: "Vice President of Operations, Chapters",
-	// 	img: "/staff/AdrianSucahyo.jpg",
-	// },
-];
+	const props: LeadershipPageProps = {
+		governance,
+		executives,
+		boardOfDirectors,
+	};
 
-const peopleGroups: PeopleGroup[] = [
-	{ name: "Corporate Officers", people: corporateOfficers },
-	{ name: "Divison Presidents", people: divisionPresidents },
-];
-
-const boardOfDirectors: Person[] = [
-	{
-		name: "Ethan Hsu",
-		title: "Chairperson",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Nathanael Ma",
-		title: "Lead Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Madison Li",
-		title: "Lead Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Harry Chow",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	// {
-	// 	name: "Rohit Choudhary",
-	// 	title: "Director",
-	// 	img: "/staff/default.png",
-	// },
-	// {
-	// 	name: "Atsi Gupta",
-	// 	title: "Director",
-	// 	img: "/staff/default.png",
-	// },
-	{
-		name: "Isaias Vilato",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Param Patil",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Kayla Laguana",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-];
+	return { props };
+}
 
 function ExecutiveButton({ children, ...props }: BoxProps) {
 	return (

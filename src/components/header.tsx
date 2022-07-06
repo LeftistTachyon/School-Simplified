@@ -1,5 +1,6 @@
 import {
 	Box,
+	Button,
 	Flex,
 	Heading,
 	HStack,
@@ -8,11 +9,14 @@ import {
 	MenuButton,
 	MenuItem,
 	MenuList,
+	Spacer,
+	Text,
 	useDisclosure,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import { useState } from "react";
 
 type MenuItem = {
 	name: string;
@@ -94,6 +98,10 @@ const menuItems: MenuItem[] = [
 				name: "Blog",
 				href: "/blog",
 			},
+			{
+				name: "Research",
+				href: "/research",
+			},
 		],
 	},
 	{
@@ -138,72 +146,110 @@ const menuItems: MenuItem[] = [
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
+	const [bannerVisible, setBannerVisible] = useState(false);
+
 	return (
-		<>
-			<Container
-				as="header"
-				py={3}
-				w="100%"
-				position="fixed"
-				zIndex={1000}
-				bg="brand.transparent"
-				backdropFilter="blur(12px)"
-				// filter="blur(24px)"
-			>
-				<ContainerInside>
+		<Container
+			as="header"
+			w="100%"
+			// position="fixed"
+			position="sticky"
+			top={0}
+			zIndex={1000}
+			bg="brand.transparent"
+			backdropFilter="blur(12px)"
+			// top={bannerVisible ? { base: 14, md: 8 } : 0}
+			// filter="blur(24px)"
+		>
+			<ContainerInside maxW="none" mx={0}>
+				{bannerVisible && (
 					<Flex
-						justify="space-between"
-						align="center"
-						flexDir={{ base: "column", lg: "row" }}
+						bgColor="#FFAC33"
+						color="black"
+						py={1}
+						px={2}
+						w="100%"
+						// position="fixed"
+						zIndex={1000}
+						// top={0}
 					>
-						<NextLink href="/" mb={{ base: 2, lg: 0 }}>
-							<Flex justify="center" align="center">
-								<Image
-									src="/ss_logo_final_svg.svg"
-									width={30}
-									height={30}
-									alt="logo"
-								/>
-								<Heading size="md" color="white" ml={2.5}>
-									School Simplified
-								</Heading>
-							</Flex>
-						</NextLink>
-						<HStack
-							spacing={3}
-							fontSize={{
-								base: 11,
-								sm: 14,
-								md: null,
-							}}
-							flexWrap="wrap"
-							justifyContent="center"
+						<Spacer />
+						<Text as="b" fontWeight={700}>
+							SimpliHacks 2.0 Registration is Officially Open!{" "}
+							<NextLink
+								href="/simplihacks"
+								_hover={{ color: "white" }}
+							>
+								<Text as="u">Click here to sign up!</Text>
+							</NextLink>
+						</Text>
+						<Spacer />
+						<Button
+							justifySelf="flex-end"
+							bgColor="transparent"
+							p={0}
+							style={{ aspectRatio: "1" }}
+							size="xs"
+							onClick={() => setBannerVisible(false)}
 						>
-							{menuItems.map((menuItem) =>
-								menuItem.children ? (
-									<DropdownMenu
-										menuItem={menuItem}
-										key={menuItem.name}
-									/>
-								) : (
-									<NextLink
-										href={menuItem.href}
-										key={menuItem.name}
-									>
-										{menuItem.isBold ? (
-											<b>{menuItem.name}</b>
-										) : (
-											menuItem.name
-										)}
-									</NextLink>
-								)
-							)}
-						</HStack>
+							X
+						</Button>
 					</Flex>
-				</ContainerInside>
-			</Container>
-			<Box h={{ base: 84, sm: 94, md: 83, lg: 54 }} />
-		</>
+				)}
+				<Flex
+					justify="space-between"
+					align="center"
+					flexDir={{ base: "column", lg: "row" }}
+					py={3}
+					px="25px"
+					mx="auto"
+					maxW="1200px"
+				>
+					<NextLink href="/" mb={{ base: 2, lg: 0 }}>
+						<Flex justify="center" align="center">
+							<Image
+								src="/ss_logo_final_svg.svg"
+								width={30}
+								height={30}
+								alt="logo"
+							/>
+							<Heading size="md" color="white" ml={2.5}>
+								School Simplified
+							</Heading>
+						</Flex>
+					</NextLink>
+					<HStack
+						spacing={3}
+						fontSize={{
+							base: 11,
+							sm: 14,
+							md: null,
+						}}
+						flexWrap="wrap"
+						justifyContent="center"
+					>
+						{menuItems.map((menuItem) =>
+							menuItem.children ? (
+								<Box key={menuItem.name}>
+									<DropdownMenu menuItem={menuItem} />
+								</Box>
+							) : (
+								<NextLink
+									href={menuItem.href}
+									key={menuItem.name}
+								>
+									{menuItem.isBold ? (
+										<b>{menuItem.name}</b>
+									) : (
+										menuItem.name
+									)}
+								</NextLink>
+							)
+						)}
+					</HStack>
+				</Flex>
+			</ContainerInside>
+		</Container>
 	);
 }
 

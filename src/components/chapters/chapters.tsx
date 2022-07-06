@@ -27,9 +27,7 @@ export default function Chapters(): JSX.Element {
 			<Container pt={50} px={{ base: 0, lg: 10 }} bg="#5E65B7">
 				<ContainerInside maxWidth={780}>
 					<Stack align="start" textAlign="left">
-						<Heading size="lg" align="start">
-							Start Your Own Chapter
-						</Heading>
+						<Heading size="lg">Start Your Own Chapter</Heading>
 						<Text mt={3}>
 							School Simplified chapters are the perfect blend of
 							flexibility and rigor.
@@ -63,14 +61,14 @@ export default function Chapters(): JSX.Element {
 									With the chapters program, motivated
 									students from around the world are able to
 									gain leadership experience, conduct service
-									projects, and help others progress in their
+									projects, and helps others progress in their
 									academics.
 								</Text>
 								<Text mt={6} textAlign="left">
-									Chapters can offer service, tutoring, essay
-									revision, and college resources. Each
-									chapter is free to focus on one or more
-									areas of interest.
+									From tutoring to essay revisions, college
+									resources, and so much more, each chapter is
+									free to focus on one or more areas of
+									interest.
 								</Text>
 							</VStack>
 							<Spacer maxW={{ md: 5, lg: 20 }} />
@@ -148,10 +146,9 @@ export default function Chapters(): JSX.Element {
 										</Heading>
 										<Text textAlign="left" color="#5E65B7">
 											Each geographical region is divided
-											into districts. Governors administer
-											each district and are appointed by
-											the National Staff, and will be
-											appointed on a rolling basis.
+											into districts with Governors who
+											are appointed on a rolling basis by
+											the National Staff.
 										</Text>
 									</VStack>
 								</Flex>
@@ -194,15 +191,15 @@ export default function Chapters(): JSX.Element {
 												Charter application.
 											</ListItem>
 											<ListItem>
-												Elect officers, specifically
-												each of the following:
+												Elect officers (specifically
+												each of the following):
 												President, Vice President,
 												Secretary, Treasurer, and a
 												Marketing Officer.
 											</ListItem>
 											<ListItem>
 												Review any essential documents
-												with any elected officers.
+												with elected officers.
 											</ListItem>
 											<ListItem>
 												Start recruiting chapter

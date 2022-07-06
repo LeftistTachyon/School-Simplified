@@ -1,24 +1,31 @@
 /* eslint-disable import/no-default-export */
-import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import {
 	AccordionButton,
+	AccordionIcon,
 	AccordionItem,
 	AccordionPanel,
 	Flex,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
-import { AnswerPart } from "types";
+import type { AnswerPart } from "types";
 
 type FaqItemProps = {
 	question: string;
 	answers: AnswerPart[];
-	open: boolean;
 };
 
+/**
+ * ### Creates an element that visually displays a question and answer.
+ * The answer may have links. See {@link AnswerPart} for more information.
+ *
+ * @param {FaqItemProps} props the props needed to render this FaqItem
+ * @param {string} props.question the question
+ * @param {AnswerPart[]} props.answers the text fragments that compose the answer text
+ * @returns the JSX element that represents a question and answer in an FAQ section
+ */
 export default function FaqItem({
 	question,
 	answers,
-	open,
 }: FaqItemProps): JSX.Element {
 	return (
 		<AccordionItem
@@ -38,19 +45,15 @@ export default function FaqItem({
 				<Flex textAlign="left" flex="1" fontWeight="bold">
 					{question}
 				</Flex>
-				{open ? (
-					<TriangleUpIcon color="#424242" />
-				) : (
-					<TriangleDownIcon color="#424242" />
-				)}
+				<AccordionIcon color="#424242" />
 			</AccordionButton>
 			<AccordionPanel pb={4}>
-				{answers.map((answer: AnswerPart, idx: number) => {
+				{answers.map((answer: AnswerPart) => {
 					if (answer.link) {
 						return (
 							<NextLink
 								href={answer.link}
-								key={"link_" + idx}
+								key={answer.text}
 								color="brand.gold2"
 							>
 								{answer.text}

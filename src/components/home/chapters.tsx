@@ -43,10 +43,18 @@ export default function Chapters(): JSX.Element {
 							alt="A map representing the presence of School Simplified around the United States"
 							alignSelf="center"
 						/> */}
-						<Box flex={1} overflowX="hidden" maxW="100%" minW="450">
+						<Box
+							flex={1}
+							overflowX="hidden"
+							maxW="100%"
+							minW={{
+								base: 300,
+								md: 450,
+							}}
+						>
 							<iframe
 								src="https://www.google.com/maps/d/embed?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&ehbc=2E312F"
-								width="450"
+								width="100%"
 								height="300"
 								// alt="Chapters Google Maps with States Highlighted"
 							/>
@@ -64,10 +72,10 @@ export default function Chapters(): JSX.Element {
 									in their academics.
 								</Text>
 								<Text>
-									Chapters can offer service, tutoring, essay
-									revision, and college resources. Each
-									chapter is free to focus on one or more
-									areas of interest.
+									Chapters can offer any service, including
+									tutoring, essay revision, and college
+									resources. Each chapter is free to focus on
+									one or more areas of interest.
 								</Text>
 								<NextChakraLink
 									href="https://docs.google.com/forms/d/e/1FAIpQLSesSX3Lislu9m6j_Cgwu3eALgAm0RJ1iTvxcGih82B0J0iXmg/viewform?usp=sf_link"

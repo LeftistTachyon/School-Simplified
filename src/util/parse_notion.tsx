@@ -1,22 +1,22 @@
 import {
 	Box,
 	Checkbox,
+	Divider,
 	Heading,
+	HStack,
+	Icon,
 	Image,
 	ListItem,
 	OrderedList,
 	Text,
-	Icon,
 	UnorderedList,
-	Divider,
-	HStack,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
+import TeX from "@matejmazur/react-katex";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { FaPaperclip, FaRegFilePdf, FaVideo } from "react-icons/fa";
-import { InlineMath, BlockMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
-import { Author, BlogPage, FileObj } from "types";
+import type { Author, BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -94,7 +94,8 @@ export function parseText(text: any): JSX.Element {
 
 	const plainText =
 		text.type === "equation" ? (
-			<InlineMath math={text.plain_text} />
+			// <InlineMath math={} />
+			<TeX math={text.plain_text} />
 		) : (
 			<>{replaceNewlines(text.plain_text)}</>
 		);
@@ -125,7 +126,7 @@ export function parseText(text: any): JSX.Element {
  * @param text the text to convert to a JSX psuedoelement
  * @returns the converted element
  */
-function replaceNewlines(text: string): JSX.Element {
+export function replaceNewlines(text: string): JSX.Element {
 	// console.log('called with "' + text + '".');
 
 	// no newlines
@@ -135,8 +136,10 @@ function replaceNewlines(text: string): JSX.Element {
 	const elements: JSX.Element[] = [];
 
 	for (const segment of text.split(/[\n\r]+/g)) {
-		elements.push(<>{segment}</>);
-		elements.push(<br />);
+		elements.push(cloneElement(<>{segment}</>, { key: segment }));
+		elements.push(<br key={segment + "br"} />);
+		// elements.push(<>{segment}</>);
+		// elements.push(<br />);
 	}
 	elements.pop();
 	// console.log("elements: ", elements);
@@ -152,13 +155,7 @@ function replaceNewlines(text: string): JSX.Element {
  */
 export function parsePlainText(text: any[]): JSX.Element {
 	return (
-		<Text>
-			{text.map((block) =>
-				cloneElement(replaceNewlines(block.plain_text), {
-					key: block.plain_text,
-				})
-			)}
-		</Text>
+		<Text>{text.map((block) => replaceNewlines(block.plain_text))}</Text>
 	);
 }
 
@@ -260,7 +257,8 @@ export function parseBlock(block: any): JSX.Element {
 		case "equation":
 			return (
 				<Box overflowX="scroll">
-					<BlockMath math={block.equation.expression} />
+					{/* <BlockMath math={} /> */}
+					<TeX math={block.equation.expression} block />
 				</Box>
 			);
 		case "file":

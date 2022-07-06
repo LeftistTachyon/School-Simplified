@@ -34,7 +34,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "Essay Revision",
 		content:
-			"Hard classes? Not a problem. Scholarships? Not a problem. A creative paper? Not a problem. Our essay revision services are open to everyone year-round!",
+			"Hard classes? Scholarship Essays? A creative paper? Not a problem. Our essay revision services are open to everyone year-round!",
 		timmySrc: "/timmy/29_cowboy.png",
 		onLeft: false,
 		href: "/essay",
@@ -42,7 +42,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "Tutoring",
 		content:
-			"Take a shot at our private tutoring, personalized and offered by top notch students for every subject you need!",
+			"Sign up for private tutoring sessions, personalized and offered by top notch students for every subject you need!",
 		timmySrc: "/timmy/16_cowboy.png",
 		onLeft: true,
 		href: "/tutoring",
@@ -50,7 +50,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "School Help",
 		content:
-			"Homework is hard, but we've got your back 24/7 with help via private messaging!",
+			"Homework can be challenging, but with our homework help service, you can get your questions answered 24/7 with help through private messaging!",
 		timmySrc: "/timmy/24_cowboy.png",
 		onLeft: true,
 		href: "/discord",
@@ -76,12 +76,12 @@ export default function AcademicServices(): JSX.Element {
 							Digital Program
 						</Heading>
 						<Text mt={6} textAlign="justify">
-							We provide a broad selection of free resources to
+							We provide a broad selection of free resources
 							including tutoring, essay revision, notes,
 							standardized testing preparation, college
-							preparation, and numerous more. Additionally, with
-							an international community of over 60,000 students,
-							anyone can carve out a home at School Simplified.
+							preparation, and many more. Additionally, with an
+							international community of over 60,000 students,
+							anyone can find a home at School Simplified.
 						</Text>
 					</motion.div>
 					<SimpleGrid

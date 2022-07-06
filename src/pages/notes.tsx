@@ -13,7 +13,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesViewer from "@components/resources/notesViewer";
 // import NotesSection from "@components/resources/notes_section";
-import { AllSubjects } from "types";
+import type { AllSubjects } from "types";
 
 export default function Notes({ subjects }: AllSubjects): JSX.Element {
 	const showTimmy = useBreakpointValue({ base: false, md: true });

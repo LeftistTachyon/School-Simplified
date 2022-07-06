@@ -15,7 +15,7 @@ import {
 	useBreakpointValue,
 	useDisclosure,
 	Wrap,
-	WrapItem,
+	WrapItem
 } from "@chakra-ui/react";
 import StyledButton from "@components/button";
 import Container from "@components/container";
@@ -41,8 +41,8 @@ export default function PartnersPage() {
 								</Heading>
 								<Text my={5}>
 									Connect with us, take advantage of our
-									resources, and together we can build a
-									brighter future.
+									resources, and build a brighter future with
+									us.
 								</Text>
 								{/* <NextLink href="/notes">
 							<Button>Get Free Help</Button>
@@ -95,8 +95,8 @@ export default function PartnersPage() {
 
 					<Center my={5}>
 						<SimpleGrid
-							columns={{ base: 1, md: partnerGroups.length }}
-							rounded={24}
+							// columns={{ base: 1, md: partnerGroups.length }}
+							rounded={{ base: 24, md: "full" }}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
@@ -106,8 +106,8 @@ export default function PartnersPage() {
 								<PartnerButton
 									onClick={() => setGroupIdx(idx)}
 									key={partnerGroup.name}
-									gridRow={isVertical ? idx + 1 : 1}
-									gridColumn={isVertical ? 1 : idx + 1}
+									gridRow={{ base: idx + 1, md: 1 }}
+									gridColumn={{ base: 1, md: idx + 1 }}
 								>
 									<AnimatePresence>
 										<Heading
@@ -130,7 +130,7 @@ export default function PartnersPage() {
 							>
 								<Box
 									background="white"
-									rounded={24}
+									rounded={{ base: 24, md: "full" }}
 									px={12}
 									py={3.5}
 								>
@@ -208,19 +208,21 @@ type Partner = {
 
 const productPartners: Partner[] = [
 	{
-		name: "Versatile Node",
+		name: "WinterNode",
 		description:
-			"Versatile Node is an organization geared towards providing cheap, fast and reliable hosting for all your needs! Versatile offers resources range from minecraft hosting, VPS hosting, to web hosting.",
-		src: "/partners/versatile.png",
-		link: "https://versatilenode.com/",
+			"WinterNode is an organization geared towards providing cheap, fast and reliable hosting for all your needs! WinterNode offers resources range from Minecraft hosting, VPS hosting, to web hosting.",
+		src: "/partners/winternode.svg",
+		link: "https://winternode.com/",
 	},
 	{
 		name: "Tech Soup",
 		src: "https://www.techsoup.org/_layouts/15/TechSoupRWD/ui/images/tslogo.svg",
+		link: "https://www.techsoup.org/",
 	},
 	{
 		name: "Grammarly",
 		src: "https://www.grammarly.com/press/media-resources/docs/logo-grammarly.png",
+		link: "https://www.grammarly.com/",
 	},
 	{
 		name: "Deloitte",
@@ -241,6 +243,12 @@ const productPartners: Partner[] = [
 			"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
 		src: "/partners/ngo.png",
 		link: "https://dot.ngo/join-beta",
+	},
+	{
+		name: "Atlassian",
+		description: "",
+		src: "/partners/atlassian.png",
+		link: "https://www.atlassian.com/",
 	},
 ];
 

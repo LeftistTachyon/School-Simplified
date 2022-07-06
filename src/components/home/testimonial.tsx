@@ -89,7 +89,7 @@ export default function Intro() {
 						be accessible to everyone with equal opportunity. As an
 						organization run by students from around the world we
 						know exactly what you need to succeed! Take advantage of
-						that and help us help you!
+						that and let us help you!
 					</Text>
 				</motion.div>
 				<motion.div

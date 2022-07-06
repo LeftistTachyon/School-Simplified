@@ -2,8 +2,9 @@ import { Box, Heading } from "@chakra-ui/react";
 import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import type { QAPair } from "types";
 
-const qaPairs = [
+const qaPairs: QAPair[] = [
 	{
 		question: "What is a Hackathon?",
 		answer: [
@@ -17,7 +18,7 @@ const qaPairs = [
 		question: "Who can participate?",
 		answer: [
 			{
-				text: "How do I join? Any high school or middle school students can participate! Sign up on the TypeForm and join our Discord Server! (Note: Sign Ups are currently not open)",
+				text: "Any student or staff currently enrolled in middle school, high school, or college can participate! Sign up on the sign up button above!",
 				link: "",
 			},
 		],
@@ -26,7 +27,7 @@ const qaPairs = [
 		question: "What if I don't have a team?",
 		answer: [
 			{
-				text: "No worries! There will be a session at the beginning of the hackathon for team formation. A team can have a maximum of 4 people.",
+				text: "Do not worry! We will have a team formation section in the beginning.",
 				link: "",
 			},
 		],
@@ -35,16 +36,16 @@ const qaPairs = [
 		question: "Does this cost money?",
 		answer: [
 			{
-				text: "No! Participating in Simplihacks is 100% free for everyone!",
+				text: "No! Participating in SimpliHacks is 100% free for everyone!",
 				link: "",
 			},
 		],
 	},
 	{
-		question: "When does Simplihacks take place?",
+		question: "When does SimpliHacks take place?",
 		answer: [
 			{
-				text: "Simplihacks will take place from June 12-13, and will last 24 hours!",
+				text: "SimpliHacks 2.0 will take place from June 24-26 2022, and will last 48 hours!",
 				link: "",
 			},
 		],
@@ -71,9 +72,14 @@ const qaPairs = [
 		question: "Is there a Code of Conduct?",
 		answer: [
 			{
-				text: "Yes, there is! Although we are not affiliated with MLH, we will abide by the MLH Code of Conduct during this event.",
+				text: "Yes, there is! We will be following the ",
 				link: "",
 			},
+			{
+				text: "MLH Code of Conduct",
+				link: "https://static.mlh.io/docs/mlh-code-of-conduct.pdf",
+			},
+			{ text: ".", link: "" },
 		],
 	},
 	{
@@ -89,8 +95,12 @@ const qaPairs = [
 		question: "What if I have another question?",
 		answer: [
 			{
-				text: "Feel free to ask questions at any time! Send us an email at marketing@schoolsimplified.org",
+				text: "Feel free to ask questions at any time! Send us an email at ",
 				link: "",
+			},
+			{
+				text: "aviel.hernandez@schoolsimplified.org",
+				link: "mailto:aviel.hernandex@schoolsimplified.org",
 			},
 		],
 	},

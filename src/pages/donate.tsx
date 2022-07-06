@@ -1,4 +1,12 @@
-import { Heading, Stack, VStack, Text, Box, Image } from "@chakra-ui/react";
+import {
+	Heading,
+	Stack,
+	VStack,
+	Text,
+	Box,
+	Image,
+	Center,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -24,38 +32,48 @@ export default function Donate() {
 				<Stack
 					direction={{ base: "column-reverse", lg: "row" }}
 					align="center"
-					spacing={{ base: 50, md: 10 }}
+					spacing={{ base: 24, lg: 10 }}
 				>
-					<Box display={{ base: "inline-block", lg: "none" }}>
+					{/* <Box display={{ base: "inline-block", lg: "none" }}>
 						<iframe
-							src="https://master.d3o53wn77q6k5v.amplifyapp.com/"
+							src="https://www.donation.dot.ngo/?nonprofitName=.NGO+Charities&formName=School+Simplified+Default"
 							frameBorder="0"
 							width="350px"
 							height="600px"
 							scrolling="no"
 						/>
-					</Box>
-					<Box
+					</Box> */}
+					<Center
 						rounded={15}
 						bg="brand.purple.dark"
-						height="600px"
-						width="900px"
-						display={{ base: "none", lg: "block" }}
+						p={22}
+						// display={{ base: "none", lg: "block" }}
 					>
-						<Image
-							position="relative"
-							left="30%"
-							top="-11%"
-							src="timmy/timmy_donation_money.png"
-						/>
-						<iframe
-							src="https://master.d3o53wn77q6k5v.amplifyapp.com/"
-							frameBorder="0"
-							width="100%"
-							height="100%"
-							style={{ position: "relative", top: "-17%" }}
-						/>
-					</Box>
+						<Box position="relative">
+							<Image
+								position="absolute"
+								left="50%"
+								top="1px"
+								transform="translate(-50%, -100%)"
+								src="timmy/timmy_donation_money.png"
+							/>
+							<iframe
+								src="https://www.donation.dot.ngo/?nonprofitName=.NGO+Charities&formName=School+Simplified+Default"
+								frameBorder="0"
+								style={{
+									position: "relative",
+									top: "-100px",
+									width: "420px",
+									height: "750px",
+									marginBottom: "-110px",
+								}}
+								// width="420px"
+								// height="550px"
+								scrolling="no"
+								loading="eager"
+							/>
+						</Box>
+					</Center>
 					<VStack align="start" width="100%">
 						<Heading textAlign="left" py="10px">
 							Support School Simplified
@@ -84,7 +102,6 @@ export default function Donate() {
 										key={reason.title}
 										w="100%"
 										// h="100%"
-										align="start"
 									>
 										<Text
 											color="brand.yellow"

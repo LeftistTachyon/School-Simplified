@@ -29,12 +29,11 @@ const cardProps: CardProps[] = [
 		title: "Python 101: The Basics",
 		subtitle: "Start forming your professional coding skills!",
 		content:
-			"Learn the basics of Python and build a foundation in programming that can be applied anywhere! This course contains knowledge on storing and handling data, control flow, error handling, and even version control for your projects",
+			"Learn the basics of Python and build a foundation in programming that can be applied anywhere! This course teaches you about storing and handling data, control flow, error handling, and even version control for your projects.",
 	},
 	{
 		title: "Java 101: The Basics",
-		subtitle:
-			"Discover more about all the information needed for the AP Computer Science exam, and more!",
+		subtitle: "Learn and study for the AP Computer Science exam, and more!",
 		content:
 			"Learn the basics of object-oriented programming with the Java programming language! From computational thinking to recursive sorting algorithms, we've got you covered.",
 	},
@@ -42,13 +41,13 @@ const cardProps: CardProps[] = [
 		title: "Website Development with Next.js",
 		subtitle: "Create your own websites from scratch!",
 		content:
-			"Learn the basics of TypeScript, React, and Chakra UI to develop websites! Creating your own websites scratch is a useful skill that can help foster creativity, help you understand code, and allow you to start your own personal projects. The course covers VS Code and GitHub for professional settings usage.",
+			"Learn the basics of TypeScript, React, and Chakra UI to develop websites! Creating your own websites from scratch is a useful skill that can foster creativity, help you understand code, and allow you to start your own personal projects. The course covers VS Code and GitHub for usage in professional settings.",
 	},
 	{
 		title: "Discord: Bot Development",
 		subtitle: "Create your own interactive Discord Bot!",
 		content:
-			"Learn how yo use the latest features exposed by the discord API (slash commands, interactions) with TypeScript and NodeJS. The course teaches the fundamentals of server side code, event listeners, strong typing and more through a fun and popular application of these techniques.",
+			"Learn how to use the latest features exposed by the discord API (slash commands, interactions) with TypeScript and NodeJS. The course teaches the fundamentals of server side code, event listeners, strong typing and more through a fun and popular application of these techniques.",
 	},
 ];
 
@@ -70,15 +69,15 @@ export default function Programming(): JSX.Element {
 									</Heading>
 								</NextLink>
 								<Text mt={6} textAlign="left">
-									Want to create, launch, and produce
-									projects? Want to gain coding skills through
-									an innovative way of learning?
+									Want to create and launch your own projects?
+									Want to gain coding skills through an
+									innovative way of learning?
 								</Text>
 								<Text mt={6} textAlign="left">
 									Programming Simplified will help you do just
-									that! It is a program designed to help
-									beginner programmers learn the necessary
-									basic skills to start their own career
+									that! As a program designed to help beginner
+									programmers, you can learn the skills
+									necessary to start their own career
 									projects!
 								</Text>
 
@@ -97,16 +96,15 @@ export default function Programming(): JSX.Element {
 										</Button>
 									</NextLink>
 
-									<NextLink
+									{/* <NextLink
 										isExternal
 										href="https://discord.com/invite/s6HAveWMCg"
 										_hover={{ textDecoration: "none" }}
 									>
 										<Button timmysrc="/timmy/22.png">
-											{" "}
-											Join Now{" "}
+											Join Now
 										</Button>
-									</NextLink>
+									</NextLink> */}
 								</Stack>
 							</VStack>
 							<Spacer maxW={{ md: 5, lg: 20 }} />
@@ -137,9 +135,9 @@ export default function Programming(): JSX.Element {
 							</Text>
 							<Text mt={4} textAlign="left">
 								Learn at your own pace with professionally
-								recorded lessons. To receive the certificate of
+								recorded lessons. To receive your certificate of
 								completion at the end of a course, you will have
-								to create an independent and personal project!
+								to create an independent project!
 							</Text>
 						</motion.div>
 						<SimpleGrid

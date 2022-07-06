@@ -44,7 +44,7 @@ export default function Intro() {
 						<VStack>
 							<Heading fontSize={25}>
 								<CountUp
-									end={500}
+									end={550}
 									suffix="M+"
 									useEasing
 									duration={3}

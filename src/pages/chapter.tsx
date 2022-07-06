@@ -4,7 +4,7 @@
 // import ContainerInside from "@components/containerInside";
 // import NextLink from "@components/nextChakra";
 
-import { Chapters, Testimonials, FAQ } from "@components/chapters/index";
+import { Chapters, Testimonials, FAQ } from "@components/chapters";
 
 export default function Chapter(): JSX.Element {
 	return (

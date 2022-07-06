@@ -66,7 +66,7 @@ export default function Projects(): JSX.Element {
 											<Text mt={6} textAlign="left">
 												Projects can include almost
 												anything from hackathons,
-												advocacy campaings, competitive
+												advocacy campaigns, competitive
 												startups, and more!
 											</Text>
 

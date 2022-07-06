@@ -1,4 +1,11 @@
-import { Heading, SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
+import {
+	Box,
+	Heading,
+	SimpleGrid,
+	Stack,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -16,7 +23,7 @@ export default function GettingStarted() {
 				<Stack
 					spacing={{ base: 0, md: 8, lg: 16 }}
 					mx={{ base: 8, sm: 24, md: 16, lg: 28 }}
-					direction={{ base: "column", md: "row" }}
+					direction={{ base: "column", lg: "row" }}
 				>
 					<motion.div
 						initial="initial"
@@ -27,8 +34,8 @@ export default function GettingStarted() {
 							<Heading size="lg">Getting Started</Heading>
 							<Text>
 								School Simplified is a 501(c)3 nonprofit
-								organization dedicated to learning done equally,
-								fairly and with meaning.
+								organization dedicated to fair, equal, and
+								meaningful learning.
 							</Text>
 							<SimpleGrid
 								columns={{ base: 1, md: 2 }}
@@ -80,13 +87,15 @@ export default function GettingStarted() {
 							</SimpleGrid>
 						</VStack>
 					</motion.div>
-					<motion.img
-						initial="initial"
-						whileInView="onView"
-						variants={slideInRight()}
-						src="/timmy/homepage_getting_started.png"
-						alt="A Timmy with a graduation cap and book pointing towards the text on the left"
-					/>
+					<Box display={{ base: "none", lg: "block" }}>
+						<motion.img
+							initial="initial"
+							whileInView="onView"
+							variants={slideInRight()}
+							src="/timmy/homepage_getting_started.png"
+							alt="A Timmy with a graduation cap and book pointing towards the text on the left"
+						/>
+					</Box>
 				</Stack>
 			</ContainerInside>
 		</Container>
