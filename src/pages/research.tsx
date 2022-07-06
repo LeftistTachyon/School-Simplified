@@ -223,7 +223,7 @@ function ResearchViewPane({
 						</HStack>
 						{matchedOpportunities?.length ? (
 							<>
-								<SimpleGrid columns={3} spacing={5}>
+								<SimpleGrid columns={{ lg: 3 }} spacing={5}>
 									{matchedOpportunities
 										.slice(page * 12, (page + 1) * 12)
 										.map((opportunity) => (
