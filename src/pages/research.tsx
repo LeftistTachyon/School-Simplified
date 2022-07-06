@@ -46,11 +46,16 @@ export default function Research({
 	return (
 		<>
 			<Container bgColor="brand.darkerBlue">
-				<ContainerInside py={10} px={32}>
-					<HStack spacing={15}>
-						<VStack textAlign="left" align="stretch" spacing={5}>
-							<Heading>Research Simplified</Heading>
-							<Text>
+				<ContainerInside py={10} px={{ base: 15, md: 15 }}>
+					<Stack
+						spacing={{ base: 5, md: 10 }}
+						direction={{ base: "column", md: "row" }}
+						justifyContent={{ base: "left", md: "center" }}
+						align="center"
+					>
+						<VStack textAlign="left" align="flex-start" flex={5}>
+							<Heading size="xl">Research Simplified</Heading>
+							<Text fontSize="lg">
 								A universal, intelligent search algorithm
 								dedicated to helping people find educational
 								opportunities on the middle school, high school,
@@ -62,7 +67,7 @@ export default function Research({
 							src="/timmy/timmy_football.png"
 							alt="Timmy holding an American football"
 						/>
-					</HStack>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<ResearchViewPane
@@ -212,7 +217,7 @@ function ResearchViewPane({
 						</Accordion>
 					</VStack>
 					<VStack flex="1 1" spacing={15} align="stretch">
-						<HStack>
+						<Stack direction={{ base: "column", md: "row" }}>
 							<Searchbar
 								placeholder="Type to Search"
 								flex={2}
@@ -220,13 +225,15 @@ function ResearchViewPane({
 								size="sm"
 							/>
 							<Spacer maxW={50} />
-							<Heading size="xs">Sort By</Heading>
-							<Select placeholder="None" w="fit-content">
-								<option value="deadline_early">
-									Earliest Deadline
-								</option>
-							</Select>
-						</HStack>
+							<HStack>
+								<Heading size="xs">Sort By</Heading>
+								<Select placeholder="None" w="fit-content">
+									<option value="deadline_early">
+										Earliest Deadline
+									</option>
+								</Select>
+							</HStack>
+						</Stack>
 						{matchedOpportunities?.length ? (
 							<>
 								<SimpleGrid columns={{ lg: 3 }} spacing={5}>
