@@ -6,11 +6,6 @@ import ScholasticRRCard from "./srrcard";
 
 const staff: Person[] = [
 	{
-		name: "Aviel Hernandez",
-		title: "Executive Projects Director",
-		img: "/scholasticrr/staff/Aviel-Hernandez_EPDLead-Organizer.jpg",
-	},
-	{
 		name: "Rachel Yoon",
 		title: "Lead Organizer",
 		img: "/simplihacks/staff/default.png",
