@@ -16,6 +16,16 @@ const staff: Person[] = [
 		img: "/simplihacks/staff/jonathan.png",
 	},
 	{
+		name: "Reeva Khokhar",
+		title: "Operations Team",
+		img: "/simplihacks/staff/Reeva-Khokhar_Operations-Team.png",
+	},
+	{
+		name: "Ethan Barron",
+		title: "Operations Team",
+		img: "/simplihacks/staff/Ethan-Barron_Operations-Team.png",
+	},
+	{
 		name: "Roland Yang",
 		title: "Organizer",
 		img: "/simplihacks/staff/default.png",
