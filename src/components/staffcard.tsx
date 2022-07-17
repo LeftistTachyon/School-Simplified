@@ -5,6 +5,7 @@ import {
 	Heading,
 	HStack,
 	Icon,
+	Image,
 	Modal,
 	ModalBody,
 	ModalCloseButton,
@@ -18,7 +19,6 @@ import {
 	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import React, { useMemo } from "react";
 import {
 	FaFacebookSquare,
@@ -33,8 +33,8 @@ import Button from "./button";
 import NextChakraLink from "./nextChakra";
 // import { RiBoxingLine } from "react-icons/ri";
 
-const blurDataURL =
-	"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE5SURBVChTFZDLTsJQFEVXbwVKi4I6McHowPj/M2f8hIkaxQQftNTSUnr77u3Dy3Cf7LPO3sdYrZ6GkdEzGCb5MUIeQtI8Y764wnEcEGNUVXDWKUXXt1SqZbNes1u/IbQ2ZwtuHx5ZLu8wTQNRVyXHJGEfRviuy1z03F9eYA8tnrfD8//IihLh2FMsa0Lf94iu51prZ3TGfDrBGY8wDLAdG5HmOappMPXktGBPJtxo4sw+p2sUJ2fTdIgsKzS6oiwKfT5GFg256vDjlMNRsvMDtu4OIQTUdU0QhrxvfvkIJLIWfLoh3l9EfEyA4UTM2Ho+r88vFJWOYM34inOCJCWtFb8/Hq4fIrZbn6/NN8E+om6hESMOrWAYW+SlNroBSVLoMlJSamquX6DagSAtKTuQOnsiM2pdKIol/52AyDKHj3ObAAAAAElFTkSuQmCC";
+// const blurDataURL =
+// 	"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE5SURBVChTFZDLTsJQFEVXbwVKi4I6McHowPj/M2f8hIkaxQQftNTSUnr77u3Dy3Cf7LPO3sdYrZ6GkdEzGCb5MUIeQtI8Y764wnEcEGNUVXDWKUXXt1SqZbNes1u/IbQ2ZwtuHx5ZLu8wTQNRVyXHJGEfRviuy1z03F9eYA8tnrfD8//IihLh2FMsa0Lf94iu51prZ3TGfDrBGY8wDLAdG5HmOappMPXktGBPJtxo4sw+p2sUJ2fTdIgsKzS6oiwKfT5GFg256vDjlMNRsvMDtu4OIQTUdU0QhrxvfvkIJLIWfLoh3l9EfEyA4UTM2Ho+r88vFJWOYM34inOCJCWtFb8/Hq4fIrZbn6/NN8E+om6hESMOrWAYW+SlNroBSVLoMlJSamquX6DagSAtKTuQOnsiM2pdKIol/52AyDKHj3ObAAAAAElFTkSuQmCC";
 
 type StaffCardProps = {
 	staff: BiographyInfo;
@@ -136,11 +136,11 @@ export default function StaffCard({
 						objectFit="cover"
 						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
-						layout="intrinsic"
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
 						width="100%"
 						height="100%"
 						placeholder="blur"
-						blurDataURL={blurDataURL}
 					/>
 				</Center>
 			) : (
@@ -150,11 +150,11 @@ export default function StaffCard({
 						objectFit="cover"
 						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
-						layout="intrinsic"
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
 						width="100%"
 						height="100%"
 						placeholder="blur"
-						blurDataURL={blurDataURL}
 					/>
 				</Center>
 			)}
@@ -252,11 +252,11 @@ function BiographyModal({
 								placeContent="stretch"
 							>
 								<Image
-									layout="intrinsic"
+									// layout="intrinsic"
+									// blurDataURL={blurDataURL}
 									width="100%"
 									height="100%"
 									placeholder="blur"
-									blurDataURL={blurDataURL}
 									alt={"Picture of " + name}
 									objectFit="cover"
 									style={{ aspectRatio: "1" }}
