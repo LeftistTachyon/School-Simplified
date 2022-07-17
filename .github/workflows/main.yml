@@ -8,11 +8,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
       
       # Build the repo
       - name: Build
