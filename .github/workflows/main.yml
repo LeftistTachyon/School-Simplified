@@ -21,6 +21,8 @@ jobs:
       # Build the repo
       - name: Build
         run: npm run build
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       
       # vercel stuff
       - name: Vercel Action
