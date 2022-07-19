@@ -17,6 +17,7 @@ import {
 	Select,
 	SimpleGrid,
 	Spacer,
+	Stack,
 	Text,
 	VStack,
 } from "@chakra-ui/react";
@@ -45,11 +46,16 @@ export default function Research({
 	return (
 		<>
 			<Container bgColor="brand.darkerBlue">
-				<ContainerInside py={10} px={32}>
-					<HStack spacing={15}>
-						<VStack textAlign="left" align="stretch" spacing={5}>
-							<Heading>Research Simplified</Heading>
-							<Text>
+				<ContainerInside py={10} px={{ base: 15, md: 15 }}>
+					<Stack
+						spacing={{ base: 5, md: 10 }}
+						direction={{ base: "column", md: "row" }}
+						justifyContent={{ base: "left", md: "center" }}
+						align="center"
+					>
+						<VStack textAlign="left" align="flex-start" flex={5}>
+							<Heading size="xl">Research Simplified</Heading>
+							<Text fontSize="lg">
 								A universal, intelligent search algorithm
 								dedicated to helping people find educational
 								opportunities on the middle school, high school,
@@ -61,7 +67,7 @@ export default function Research({
 							src="/timmy/timmy_football.png"
 							alt="Timmy holding an American football"
 						/>
-					</HStack>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<ResearchViewPane
@@ -183,7 +189,12 @@ function ResearchViewPane({
 	return (
 		<Container>
 			<ContainerInside>
-				<HStack spacing={5} align="stretch" py={7}>
+				<Stack
+					direction={{ base: "column", md: "row" }}
+					spacing={5}
+					align="stretch"
+					py={7}
+				>
 					<VStack flex="0 0" spacing={0} align="stretch">
 						<HStack spacing={5} p={5}>
 							{/* <TimmyButton minW={100}>Filter</TimmyButton> */}
@@ -206,7 +217,7 @@ function ResearchViewPane({
 						</Accordion>
 					</VStack>
 					<VStack flex="1 1" spacing={15} align="stretch">
-						<HStack>
+						<Stack direction={{ base: "column", md: "row" }}>
 							<Searchbar
 								placeholder="Type to Search"
 								flex={2}
@@ -214,16 +225,18 @@ function ResearchViewPane({
 								size="sm"
 							/>
 							<Spacer maxW={50} />
-							<Heading size="xs">Sort By</Heading>
-							<Select placeholder="None" w="fit-content">
-								<option value="deadline_early">
-									Earliest Deadline
-								</option>
-							</Select>
-						</HStack>
+							<HStack>
+								<Heading size="xs">Sort By</Heading>
+								<Select placeholder="None" w="fit-content">
+									<option value="deadline_early">
+										Earliest Deadline
+									</option>
+								</Select>
+							</HStack>
+						</Stack>
 						{matchedOpportunities?.length ? (
 							<>
-								<SimpleGrid columns={3} spacing={5}>
+								<SimpleGrid columns={{ lg: 3 }} spacing={5}>
 									{matchedOpportunities
 										.slice(page * 12, (page + 1) * 12)
 										.map((opportunity) => (
@@ -260,7 +273,7 @@ function ResearchViewPane({
 							</Text>
 						)}
 					</VStack>
-				</HStack>
+				</Stack>
 			</ContainerInside>
 		</Container>
 	);
