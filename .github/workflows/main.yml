@@ -24,7 +24,7 @@ jobs:
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       
-      # vercel stuff
+      # Deploy to Vercel
       - name: Vercel Action
         uses: amondnet/vercel-action@v25.1.0
         with:
