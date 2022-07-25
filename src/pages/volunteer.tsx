@@ -23,6 +23,7 @@ import NextChakraLink from "@components/nextChakra";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { JobPosting } from "types";
+import { replaceNewlines } from "../util/parse_notion";
 
 const defaultOption: string = "Any/All";
 
@@ -438,13 +439,18 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 												px={10}
 												py={6}
 												textAlign="left"
-
 											>
 												{selectedPosition.details}
 												<br />
-												{selectedPosition.responsibilities}
 												<br />
-												{selectedPosition.requirements}
+												{replaceNewlines(
+													selectedPosition.responsibilities
+												)}
+												<br />
+												<br />
+												{replaceNewlines(
+													selectedPosition.requirements
+												)}
 											</Box>
 										</VStack>
 									</motion.div>
