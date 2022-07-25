@@ -438,8 +438,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 												px={10}
 												py={6}
 												textAlign="left"
+
 											>
-												{selectedPosition.description}
+												{selectedPosition.details}
+												<br />
+												{selectedPosition.responsibilities}
+												<br />
+												{selectedPosition.requirements}
 											</Box>
 										</VStack>
 									</motion.div>
