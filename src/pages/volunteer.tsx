@@ -3,6 +3,7 @@ import {
 	Box,
 	Button,
 	Center,
+	Divider,
 	Heading,
 	Image,
 	Select,
@@ -440,17 +441,22 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 												py={6}
 												textAlign="left"
 											>
+												<Heading fontSize="xl" mb={2}>Description</Heading>
 												{selectedPosition.details}
-												<br />
-												<br />
-												{replaceNewlines(
-													selectedPosition.responsibilities
-												)}
-												<br />
-												<br />
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>What are we looking for?</Heading>
+												<Text ml={5}>
 												{replaceNewlines(
 													selectedPosition.requirements
 												)}
+												</Text>
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>Job details</Heading>
+												<Text ml={5}>
+												{replaceNewlines(
+													selectedPosition.responsibilities
+												)}
+												</Text>
 											</Box>
 										</VStack>
 									</motion.div>
