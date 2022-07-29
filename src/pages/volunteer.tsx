@@ -446,16 +446,16 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 												<Divider my={5} />
 												<Heading fontSize="lg" mb={2}>What are we looking for?</Heading>
 												<Text ml={5}>
-												{replaceNewlines(
+												{selectedPosition.requirements ? replaceNewlines(
 													selectedPosition.requirements
-												)}
+												) : <Text ml={-5}>Requirements coming soon</Text>}
 												</Text>
 												<Divider my={5} />
 												<Heading fontSize="lg" mb={2}>Job details</Heading>
 												<Text ml={5}>
-												{replaceNewlines(
+												{selectedPosition.responsibilities ? replaceNewlines(
 													selectedPosition.responsibilities
-												)}
+												) : <Text ml={-5}>Job details coming soon</Text>}
 												</Text>
 											</Box>
 										</VStack>
