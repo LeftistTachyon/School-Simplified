@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Box, BoxProps, Center, HStack } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, BoxProps, Center, HStack, Image } from "@chakra-ui/react";
 
 type ButtonProps = {
 	type?: string;
@@ -71,7 +70,7 @@ export default function Button({
 						<Image
 							src={timmysrc}
 							alt="A small Timmy"
-							layout="fixed"
+							// layout="fixed"
 							width={41}
 							height={41}
 						/>
