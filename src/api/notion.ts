@@ -737,10 +737,9 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 			);
 			return {
 				description:
-					page.properties.Description.rich_text?.[0]?.plain_text ??
-					null,
+					page.properties.Details.rich_text?.[0]?.plain_text ?? null,
 				rank: page.properties["Volunteer Type"].select?.name ?? null,
-				form: page.properties.Form.url ?? null,
+				form: page.properties.Form?.url ?? null,
 				programs,
 				image: file0 ? getFile(file0) : null,
 				area: page.properties["Area of Work"].select?.name ?? null,
