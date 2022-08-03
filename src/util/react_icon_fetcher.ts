@@ -1,10 +1,12 @@
 import { IconType } from "react-icons";
 import { FaDiscord, FaQuestionCircle, FaRegHandshake } from "react-icons/fa";
 import { HiOutlineMail, HiUserGroup } from "react-icons/hi";
+import { FiBookOpen } from "react-icons/fi";
 import { MdWebAsset } from "react-icons/md";
 import { BiCodeAlt } from "react-icons/bi";
 
 const iconCache: Record<string, IconType> = {
+	FiBookOpen: FiBookOpen,
 	MdWebAsset: MdWebAsset,
 	FaDiscord: FaDiscord,
 	HiUserGroup: HiUserGroup,
