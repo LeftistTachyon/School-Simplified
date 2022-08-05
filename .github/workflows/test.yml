@@ -17,12 +17,13 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: npm install
-      
+
+      # Test the project
+      - name: Test
+        run: npm test
+
       # Build the repo
       - name: Build
         run: npm run build
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-
-      - name: Test
-        run: npm run test
