@@ -16,7 +16,7 @@ import NextLink from "@components/nextChakra";
 import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import React, { useState } from "react";
-import { AllSubjects, NotesProps, Subject, Unit } from "types";
+import type { AllSubjects, NotesProps, Subject, Unit } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	const allNotes: NotesProps[] = subjects

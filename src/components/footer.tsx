@@ -195,7 +195,7 @@ export default function Footer() {
 								receive weekly news!
 							</Text>
 							<HStack pt={2}>
-								<Input placeholder="Your email..." />
+								<Input placeholder="Your email..." disabled />
 
 								<Button rounded="10px" w="35%">
 									Sign Up
@@ -206,7 +206,7 @@ export default function Footer() {
 							<HStack
 								spacing={2}
 								pt={5}
-								justify="left"
+								justify="center"
 								flexWrap={{ base: "wrap", sm: "nowrap" }}
 							>
 								{socials.map((item) => {

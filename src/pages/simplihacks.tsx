@@ -1,4 +1,11 @@
-import { FAQ, Hero, Sponsors, Staff, Winners } from "@components/simplihacks";
+import {
+	FAQ,
+	Hero,
+	Sponsors,
+	Staff,
+	Winners,
+	Speakers,
+} from "@components/simplihacks";
 
 export default function simpliHacks(): JSX.Element {
 	return (
@@ -8,6 +15,7 @@ export default function simpliHacks(): JSX.Element {
 			<FAQ />
 			<Sponsors />
 			<Staff />
+			<Speakers />
 		</>
 	);
 }

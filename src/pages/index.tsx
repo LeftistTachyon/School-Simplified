@@ -1,4 +1,3 @@
-// import { getBlogListing } from "@api/notion";
 import {
 	AcademicServices,
 	Chapters,
@@ -6,13 +5,14 @@ import {
 	Intro,
 	ProgrammingSimplified,
 	Projects,
-	Testimonial,
+	Testimonial
 } from "@components/home";
 import { fadeIn } from "@styles/animations";
 import { motion } from "framer-motion";
 import Head from "next/head";
 
 export default function Home() {
+	// const [isModalOpen, setModalOpen] = useState(true);
 	return (
 		<>
 			<Head>
@@ -32,17 +32,30 @@ export default function Home() {
 			<Chapters />
 			<ProgrammingSimplified />
 			<Testimonial />
+
+			{/* <Modal
+				isOpen={isModalOpen}
+				onClose={() => setModalOpen(false)}
+				isCentered
+			>
+				<ModalOverlay />
+				<ModalContent>
+					<ModalHeader>Notice</ModalHeader>
+					<ModalCloseButton />
+
+					<ModalBody>
+						Our Discord servers were recently hacked, and the School
+						Simplified server should be back up within 48 hours. We
+						are sorry for the inconvenience.
+					</ModalBody>
+
+					<ModalFooter>
+						<Button onClick={() => setModalOpen(false)}>
+							Close
+						</Button>
+					</ModalFooter>
+				</ModalContent>
+			</Modal> */}
 		</>
 	);
 }
-
-// export async function getStaticProps() {
-// 	const listing: BlogListing[] = (await getBlogListing())
-// 		.sort(
-// 			(a, b) =>
-// 				new Date(b.created_time).getTime() -
-// 				new Date(a.created_time).getTime()
-// 		)
-// 		.slice(0, 3);
-// 	return { props: { listing }, revalidate: 60 };
-// }

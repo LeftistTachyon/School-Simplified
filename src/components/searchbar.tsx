@@ -19,7 +19,9 @@ type SearchbarProps = {
 
 /**
  * Creates a Searchbar with the given SearchbarProps
- * @param props the props to pass to the component, namely, an optional callback function (a function that accepts a string) and optional size
+ * @param {SearchbarProps} props the props to pass to the component, namely, an optional callback function (a function that accepts a string) and optional size
+ * @param {(searchTerm: string) => any} props.callback an optional function that is called when the search should be be performed with the string passed as the argument
+ * @param {string} props.size the relative size to make this searchbar
  * @returns the Searchbar component
  */
 export default function Searchbar({
@@ -36,14 +38,24 @@ export default function Searchbar({
 			{/* size={props.size} is already included */}
 			<InputLeftElement
 				pointerEvents="none"
-				children={<Icon as={FaSearch} boxSize={5} />}
+				children={
+					<Icon
+						as={FaSearch}
+						boxSize={
+							functionlessProps.size === "lg" ||
+							functionlessProps.size === "xl"
+								? 5
+								: 3
+						}
+					/>
+				}
 				height="100%"
 			/>
 			<Input
-				placeholder="Search"
+				placeholder={functionlessProps.placeholder ?? "Search"}
 				bg="brand.transparent"
 				borderRadius="full"
-				size="lg"
+				size={functionlessProps.size ?? "lg"}
 				onChange={(e) => {
 					if (searchWait) clearTimeout(searchWait);
 					setLoading.on();

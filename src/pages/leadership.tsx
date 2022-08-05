@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable sonarjs/no-duplicate-string */
 import { getGovernanceData, getLeadership } from "@api/notion";
 import {
 	Box,
@@ -7,6 +5,7 @@ import {
 	Center,
 	Divider,
 	Flex,
+	Grid,
 	Heading,
 	HStack,
 	SimpleGrid,
@@ -18,7 +17,6 @@ import {
 	Th,
 	Thead,
 	Tr,
-	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -27,7 +25,12 @@ import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { ExecutiveGroup, GovernanceDocument, GovernanceSection } from "types";
+import type {
+	ExecutiveGroup,
+	GovernanceDocument,
+	GovernanceSection,
+} from "types";
+import { replaceNewlines } from "util/parse_notion";
 
 type LeadershipPageProps = {
 	governance: GovernanceSection[];
@@ -41,10 +44,11 @@ export default function Leadership({
 	boardOfDirectors,
 }: LeadershipPageProps): JSX.Element {
 	const [groupIdx, setGroupIdx] = useState(0);
-	const isVertical = useBreakpointValue({ base: true, md: false });
 
 	// console.log("executives:", executives);
 	// console.log("board of directors:", boardOfDirectors);
+
+	const indexArray = Array.from(executives, (_, i) => "idx" + i);
 
 	return (
 		<>
@@ -57,15 +61,23 @@ export default function Leadership({
 					<Divider bg="white" />
 					<Center my={5}>
 						<SimpleGrid
-							// columns={{ base: 1, md: executives.length }}
 							rounded={{ base: 24, md: "full" }}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
-							position="relative"
 							gridTemplateColumns={{
+								base: "1fr",
 								md: `repeat(${executives.length}, 1fr)`,
 							}}
+							gridTemplateRows={{
+								base: `repeat(${executives.length}, 1fr)`,
+								md: "1fr",
+							}}
+							gridTemplateAreas={{
+								base: indexArray.map((s) => `'${s}'`).join(" "),
+								md: `'${indexArray.join(" ")}'`,
+							}}
+							placeContent="stretch"
 						>
 							{executives.map((executiveGroup, idx) => (
 								<ExecutiveButton
@@ -87,8 +99,7 @@ export default function Leadership({
 							))}
 							<motion.div
 								style={{
-									gridRow: isVertical ? groupIdx + 1 : 1,
-									gridColumn: isVertical ? 1 : groupIdx + 1,
+									gridArea: "idx" + groupIdx,
 								}}
 								transition={{ duration: 0.7 }}
 								layout
@@ -98,6 +109,10 @@ export default function Leadership({
 									rounded={{ base: 24, md: "full" }}
 									px={12}
 									py={3.5}
+									h="100%"
+									w="100%"
+									display="grid"
+									placeContent="center"
 								>
 									<AnimatePresence exitBeforeEnter>
 										<motion.div
@@ -123,7 +138,10 @@ export default function Leadership({
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
 					</Heading>
-					<Flex justifyContent="center" flexWrap="wrap">
+					<Grid
+						gap={1}
+						templateColumns="repeat(auto-fit,minmax(200px,1fr))"
+					>
 						{executives[groupIdx].executives.map((staff) => {
 							return (
 								<StaffCard
@@ -132,7 +150,7 @@ export default function Leadership({
 								/>
 							);
 						})}
-					</Flex>
+					</Grid>
 
 					<Divider bg="white" />
 
@@ -152,11 +170,11 @@ export default function Leadership({
 						</Thead>
 						<Tbody>
 							{boardOfDirectors.executives.map((staff) => (
-								<Tr key={staff.name}>
-									<Td fontWeight="bold" fontSize={20}>
-										{staff.name}
+								<Tr key={staff.name} fontSize={20}>
+									<Td fontWeight="bold">{staff.name}</Td>
+									<Td lineHeight={1.4}>
+										{replaceNewlines(staff.title)}
 									</Td>
-									<Td fontSize={20}>{staff.title}</Td>
 								</Tr>
 							))}
 						</Tbody>

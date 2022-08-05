@@ -66,7 +66,15 @@ export default function Button({
 		>
 			<HStack>
 				{timmysrc ? (
-					<Image src={timmysrc} alt="A small Timmy" h={41} pl={1} />
+					<Center pl={1}>
+						<Image
+							src={timmysrc}
+							alt="A small Timmy"
+							// layout="fixed"
+							width={41}
+							height={41}
+						/>
+					</Center>
 				) : null}
 				<Center flex={1}>{boxProps.children}</Center>
 			</HStack>

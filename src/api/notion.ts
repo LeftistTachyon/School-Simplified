@@ -8,7 +8,7 @@ import {
 	BlogListing,
 	BlogPage,
 	Class,
-	Executive,
+	BiographyInfo,
 	ExecutiveGroup,
 	FileObj,
 	GovernanceDocument,
@@ -36,6 +36,27 @@ export const notionConfig = {
 export const notion = new Client({
 	auth: process.env.NOTION_API_KEY,
 });
+
+/**
+ * String.prototype.replaceAll() polyfill
+ * https://gomakethings.com/how-to-replace-a-section-of-a-string-with-another-one-with-vanilla-js/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
+if (!String.prototype.replaceAll) {
+	String.prototype.replaceAll = function (str: string | RegExp, newStr: any) {
+		// If a regex pattern
+		if (
+			Object.prototype.toString.call(str).toLowerCase() ===
+			"[object regexp]"
+		) {
+			return this.replace(str, newStr);
+		}
+
+		// If a string
+		return this.replace(new RegExp(str, "g"), newStr);
+	};
+}
 
 export async function getAllSubjects(): Promise<AllSubjects> {
 	// fetch from main database
@@ -715,8 +736,14 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 				({ name }) => name
 			);
 			return {
-				description:
-					page.properties.Description.rich_text?.[0]?.plain_text ??
+				details:
+					page.properties.Details.rich_text?.[0]?.plain_text ??
+					null,
+				requirements:
+					page.properties.Requirements.rich_text?.[0]?.plain_text ??
+					null,
+				responsibilities:
+					page.properties.Responsibilities.rich_text?.[0]?.plain_text ??
 					null,
 				rank: page.properties["Volunteer Type"].select?.name ?? null,
 				form: page.properties.Form.url ?? null,
@@ -744,7 +771,7 @@ export async function getLeadership(): Promise<ExecutiveGroup[]> {
 
 	for (const exec of allExecs) {
 		const file0 = exec.properties.Image.files?.[0];
-		const newExec: Executive = {
+		const newExec: BiographyInfo = {
 			name: exec.properties.Name.title?.[0]?.plain_text ?? null,
 			title: exec.properties.Title.rich_text?.[0]?.plain_text ?? null,
 			email: exec.properties.Email?.email ?? null,
@@ -753,7 +780,10 @@ export async function getLeadership(): Promise<ExecutiveGroup[]> {
 			instagram: exec.properties.Instagram?.url ?? null,
 			facebook: exec.properties.Facebook?.url ?? null,
 			personalWebsite: exec.properties["Personal Site"]?.url ?? null,
-			biography: exec.properties.Biography.rich_text,
+			biography: {
+				type: "notion",
+				data: exec.properties.Biography.rich_text,
+			},
 			image: file0 ? getFile(file0) : null,
 		};
 

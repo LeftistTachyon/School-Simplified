@@ -19,22 +19,26 @@ import {
 	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useMemo } from "react";
 import {
-	FaLinkedinIn,
-	FaInstagram,
-	FaTwitter,
 	FaFacebookSquare,
+	FaInstagram,
+	FaLinkedinIn,
+	FaTwitter,
 } from "react-icons/fa";
-import { RiMailFill, RiComputerFill } from "react-icons/ri";
-import { Executive } from "types";
+import { RiMailFill } from "react-icons/ri";
+import { VscGlobe } from "react-icons/vsc";
+import type { BiographyData, BiographyInfo, FileObj } from "types";
 import { parseText } from "util/parse_notion";
 import Button from "./button";
 import NextChakraLink from "./nextChakra";
 // import { RiBoxingLine } from "react-icons/ri";
 
+// const blurDataURL =
+// 	"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE5SURBVChTFZDLTsJQFEVXbwVKi4I6McHowPj/M2f8hIkaxQQftNTSUnr77u3Dy3Cf7LPO3sdYrZ6GkdEzGCb5MUIeQtI8Y764wnEcEGNUVXDWKUXXt1SqZbNes1u/IbQ2ZwtuHx5ZLu8wTQNRVyXHJGEfRviuy1z03F9eYA8tnrfD8//IihLh2FMsa0Lf94iu51prZ3TGfDrBGY8wDLAdG5HmOappMPXktGBPJtxo4sw+p2sUJ2fTdIgsKzS6oiwKfT5GFg256vDjlMNRsvMDtu4OIQTUdU0QhrxvfvkIJLIWfLoh3l9EfEyA4UTM2Ho+r88vFJWOYM34inOCJCWtFb8/Hq4fIrZbn6/NN8E+om6hESMOrWAYW+SlNroBSVLoMlJSamquX6DagSAtKTuQOnsiM2pdKIol/52AyDKHj3ObAAAAAElFTkSuQmCC";
+
 type StaffCardProps = {
-	staff: Executive;
+	staff: BiographyInfo;
 } & StackProps;
 
 export default function StaffCard({
@@ -73,7 +77,7 @@ export default function StaffCard({
 		contactMeChildren.push(
 			<ContactMeIcon
 				href={personalWebsite}
-				icon={RiComputerFill}
+				icon={VscGlobe}
 				key="personalWebsite"
 			/>
 		);
@@ -116,7 +120,7 @@ export default function StaffCard({
 			maxW={{ base: 200, lg: 300 }}
 			{...props}
 		>
-			{biography?.length ? (
+			{biography ? (
 				<Center
 					p={17}
 					backgroundColor="brand.transparent"
@@ -131,9 +135,13 @@ export default function StaffCard({
 					<Image
 						alt={"Picture of " + name}
 						objectFit="cover"
-						style={{ aspectRatio: "1" }}
+						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
-						rounded={30}
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
+						width="100%"
+						height="100%"
+						placeholder="blur"
 					/>
 				</Center>
 			) : (
@@ -141,10 +149,13 @@ export default function StaffCard({
 					<Image
 						alt={"Picture of " + name}
 						objectFit="cover"
-						rounded={30}
-						style={{ aspectRatio: "1" }}
+						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
-						onClick={onOpen}
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
+						width="100%"
+						height="100%"
+						placeholder="blur"
 					/>
 				</Center>
 			)}
@@ -154,88 +165,124 @@ export default function StaffCard({
 			</Box>
 
 			{contactMeElement}
-			{biography?.length ? (
-				<Modal
-					isOpen={isOpen}
-					onClose={onClose}
-					motionPreset="slideInBottom"
-					size="3xl"
-					scrollBehavior="inside"
-					isCentered
-				>
-					<ModalOverlay />
-					<ModalContent bg="brand.darkerBlue">
-						<ModalHeader />
-						<ModalCloseButton />
-
-						<ModalBody py={0}>
-							<VStack
-								spacing={5}
-								px={{ base: 0, sm: 8 }}
-								align="stretch"
-							>
-								<HStack
-									flex={1}
-									spacing={8}
-									align="center"
-									position="sticky"
-									top={0}
-									bg="brand.darkerBlue"
-									pt={2}
-									pb={6}
-								>
-									<Box
-										rounded={30}
-										style={{ aspectRatio: "1" }}
-										flex={1}
-										overflow="hidden"
-									>
-										<Image
-											alt={"Picture of " + name}
-											objectFit="cover"
-											style={{ aspectRatio: "1" }}
-											src={
-												image?.url ??
-												"/staff/default.png"
-											}
-										/>
-									</Box>
-									<VStack
-										flex={3}
-										align="stretch"
-										textAlign="left"
-									>
-										<Heading size={headingSize}>
-											About {name}
-										</Heading>
-										<Text as="i">{title}</Text>
-										{contactMeElement}
-									</VStack>
-								</HStack>
-								<Box
-									flex={2}
-									textAlign="left"
-									overflowY="auto"
-									mb={2}
-								>
-									{biography.map((s) =>
-										React.cloneElement(parseText(s), {
-											key:
-												s.plain_text +
-												JSON.stringify(s.annotations),
-										})
-									)}
-								</Box>
-							</VStack>
-						</ModalBody>
-						<ModalFooter>
-							{/* <Button>Other action</Button> */}
-							<Button onClick={onClose}>Close</Button>
-						</ModalFooter>
-					</ModalContent>
-				</Modal>
-			) : null}
+			{biography && (
+				<BiographyModal
+					{...{
+						isOpen,
+						onClose,
+						name,
+						image,
+						headingSize,
+						title,
+						contactMeElement,
+						biography,
+					}}
+				/>
+			)}
 		</VStack>
+	);
+}
+
+type BiographyModalProps = {
+	isOpen: boolean;
+	onClose: () => void;
+	name: string;
+	image: FileObj;
+	headingSize: string;
+	title: string;
+	contactMeElement: JSX.Element;
+	biography: BiographyData;
+};
+
+function BiographyModal({
+	isOpen,
+	onClose,
+	name,
+	image,
+	headingSize,
+	title,
+	contactMeElement,
+	biography,
+}: BiographyModalProps): JSX.Element {
+	const biographyElement = useMemo(() => {
+		switch (biography.type) {
+			case "notion":
+				return biography.data.map((s) =>
+					React.cloneElement(parseText(s), {
+						key: s.plain_text + JSON.stringify(s.annotations),
+					})
+				);
+			case "react":
+				return biography.data;
+		}
+	}, [biography]);
+
+	return (
+		<Modal
+			isOpen={isOpen}
+			onClose={onClose}
+			motionPreset="slideInBottom"
+			size="3xl"
+			scrollBehavior="inside"
+			isCentered
+		>
+			<ModalOverlay />
+			<ModalContent bg="brand.darkerBlue">
+				<ModalHeader />
+				<ModalCloseButton />
+
+				<ModalBody py={0}>
+					<VStack spacing={5} px={{ base: 0, sm: 8 }} align="stretch">
+						<HStack
+							flex={1}
+							spacing={8}
+							align="center"
+							position="sticky"
+							top={0}
+							bg="brand.darkerBlue"
+							pt={2}
+							pb={6}
+						>
+							<Box
+								rounded={30}
+								style={{ aspectRatio: "1" }}
+								position="relative"
+								flex={1}
+								overflow="hidden"
+								display="grid"
+								placeContent="stretch"
+							>
+								<Image
+									// layout="intrinsic"
+									// blurDataURL={blurDataURL}
+									width="100%"
+									height="100%"
+									placeholder="blur"
+									alt={"Picture of " + name}
+									objectFit="cover"
+									style={{ aspectRatio: "1" }}
+									src={image?.url ?? "/staff/default.png"}
+								/>
+							</Box>
+							<VStack flex={3} align="stretch" textAlign="left">
+								<Heading size={headingSize}>
+									About {name}
+								</Heading>
+								<Text as="i">{title}</Text>
+								{contactMeElement}
+							</VStack>
+						</HStack>
+						<Box flex={2} textAlign="left" overflowY="auto" mb={2}>
+							{biographyElement}
+						</Box>
+					</VStack>
+				</ModalBody>
+				<ModalFooter>
+					{/* <Button>Other action</Button> */}
+					<Button onClick={onClose}>Close</Button>
+				</ModalFooter>
+			</ModalContent>
+		</Modal>
 	);
 }
 

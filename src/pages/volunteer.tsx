@@ -3,32 +3,43 @@ import {
 	Box,
 	Button,
 	Center,
+	Divider,
 	Heading,
 	Image,
 	Select,
 	SimpleGrid,
 	Stack,
+	StackDivider,
 	StackProps,
 	Text,
-	useBoolean,
+	useBreakpointValue,
+	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
+import TimmyButton from "@components/button";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { JobPosting } from "types";
+import type { JobPosting } from "types";
+import { replaceNewlines } from "../util/parse_notion";
 
 const defaultOption: string = "Any/All";
+
+const transition = {
+	x: { type: "spring", stiffness: 300, damping: 30 },
+	opacity: { duration: 0.2 },
+};
 
 /**
  * The Volunteering page!
  *
- * Mention that people can give people community service hours (!)
+ * ~~Mention that people can give people community service hours (!)
  * Needs information about the different positions (e.g. tutoring, technical, marketing, HR, etc.) (images from Mossa, alsdkfjadlskfj, aisdfhalj) [in one box, same layout for each]
  * Needs a clear button that lets users sign up, which takes them to the Discord to reinforce call to action
- * Needs a couple Undraw images
+ * Needs a couple Undraw images~~
  * @returns the Volunteering page
  */
 export default function Volunteering({ postings }: { postings: JobPosting[] }) {
@@ -71,6 +82,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		area: areaOptions,
 		program: programOptions,
 	});
+
+	const [selectedPosition, setSelectedPosition] = useState<JobPosting>(null);
 
 	useEffect(() => {
 		setPostingsToDisplay(
@@ -137,6 +150,10 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		setEnabledOptions(tempOptions);
 	}, [rank, area, program]);
 
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const isAnimated = useBreakpointValue({ base: true, md: false });
+	// console.log("isAnimated:", isAnimated);
+
 	return (
 		<>
 			<ContainerBackground
@@ -183,113 +200,270 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				bg="linear-gradient(180deg, #7683E7 0%, #A8B2FF 100%)"
 			>
 				<ContainerInside>
-					<Center>
-						<Button
-							bg="#5a60adcc"
-							disabled={!rank && !area && !program}
-							onClick={() => {
-								setRank("");
-								setArea("");
-								setProgram("");
-							}}
-						>
-							Reset Filters
-						</Button>
-					</Center>
-					<Stack
-						direction={{ base: "column", md: "row" }}
-						spacing={5}
-						mt={5}
-						mb={10}
+					<VStack
+						spacing={10}
+						align="stretch"
+						divider={<StackDivider borderColor="white" />}
 					>
-						<VStack flex={1}>
-							<Heading size="sm">Volunteer Type</Heading>
-							<Select
-								placeholder={defaultOption}
-								bg="#5a60adcc"
-								border="none"
-								value={rank}
-								onChange={(e) => setRank(e.target.value)}
+						<VStack spacing={5} bg="#A8B2FF88" rounded={25} p={6}>
+							<Stack
+								direction={{ base: "column", md: "row" }}
+								spacing={5}
 							>
-								{rankOptions.map((option) => (
-									<option
-										key={option}
-										value={option}
-										disabled={
-											!enabledOptions.rank.includes(
-												option
-											)
+								<VStack flex={1}>
+									<Heading size="sm">Rank</Heading>
+									<Select
+										placeholder={defaultOption}
+										bg="brand.darkerBlue"
+										border="none"
+										value={rank}
+										onChange={(e) =>
+											setRank(e.target.value)
 										}
 									>
-										{option}
-									</option>
-								))}
-							</Select>
-						</VStack>
-						<VStack flex={1}>
-							<Heading size="sm">Area of Work</Heading>
-							<Select
-								placeholder={defaultOption}
-								bg="#5a60adcc"
-								border="none"
-								value={area}
-								onChange={(e) => setArea(e.target.value)}
-							>
-								{areaOptions.map((option) => (
-									<option
-										key={option}
-										value={option}
-										disabled={
-											!enabledOptions.area.includes(
-												option
-											)
+										{rankOptions.map((option) => (
+											<option
+												key={option}
+												value={option}
+												disabled={
+													!enabledOptions.rank.includes(
+														option
+													)
+												}
+											>
+												{option}
+											</option>
+										))}
+									</Select>
+								</VStack>
+								<VStack flex={1}>
+									<Heading size="sm">Area of Work</Heading>
+									<Select
+										placeholder={defaultOption}
+										bg="brand.darkerBlue"
+										border="none"
+										value={area}
+										onChange={(e) =>
+											setArea(e.target.value)
 										}
 									>
-										{option}
-									</option>
-								))}
-							</Select>
-						</VStack>
-						<VStack flex={1}>
-							<Heading size="sm">Organization/Program</Heading>
-							<Select
-								placeholder={defaultOption}
-								bg="#5a60adcc"
-								border="none"
-								value={program}
-								onChange={(e) => setProgram(e.target.value)}
-							>
-								{programOptions.map((option) => (
-									<option
-										key={option}
-										value={option}
-										disabled={
-											!enabledOptions.program.includes(
-												option
-											)
+										{areaOptions.map((option) => (
+											<option
+												key={option}
+												value={option}
+												disabled={
+													!enabledOptions.area.includes(
+														option
+													)
+												}
+											>
+												{option}
+											</option>
+										))}
+									</Select>
+								</VStack>
+								<VStack flex={1}>
+									<Heading size="sm">Program</Heading>
+									<Select
+										placeholder={defaultOption}
+										bg="brand.darkerBlue"
+										border="none"
+										value={program}
+										onChange={(e) =>
+											setProgram(e.target.value)
 										}
 									>
-										{option}
-									</option>
-								))}
-							</Select>
+										{programOptions.map((option) => (
+											<option
+												key={option}
+												value={option}
+												disabled={
+													!enabledOptions.program.includes(
+														option
+													)
+												}
+											>
+												{option}
+											</option>
+										))}
+									</Select>
+								</VStack>
+							</Stack>
+							<Center>
+								<Button
+									bg="brand.darkerBlue"
+									disabled={!rank && !area && !program}
+									onClick={() => {
+										setRank("");
+										setArea("");
+										setProgram("");
+									}}
+									size="sm"
+								>
+									Reset Filters
+								</Button>
+							</Center>
 						</VStack>
-					</Stack>
-					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
-						{postingsToDisplay.map((posting: JobPosting) => (
-							<NextChakraLink
-								key={
-									posting.name +
-									posting.area +
-									posting.programs
-								}
-								isExternal
-								href={posting.form ?? ""}
-							>
-								<VolunteerPosition {...posting} h="100%" />
-							</NextChakraLink>
-						))}
-					</SimpleGrid>
+
+						<SimpleGrid
+							columns={{ base: 1, md: 2 }}
+							spacing={8}
+							h="90vh"
+							maxW="100%"
+							overflowX={{ base: "hidden", md: null }}
+							position="relative"
+						>
+							<AnimatePresence initial={false}>
+								{!isOpen || !isAnimated ? (
+									<motion.div
+										key="left"
+										style={{
+											overflowY: "scroll",
+											paddingRight: "0.5rem",
+										}}
+										variants={{
+											enter: { x: -1000, opacity: 0 },
+											center: {
+												zIndex: 1,
+												x: 0,
+												opacity: 1,
+											},
+											exit: {
+												zIndex: 0,
+												x: -1000,
+												opacity: 0,
+												position: "absolute",
+											},
+										}}
+										initial="enter"
+										animate="center"
+										exit="exit"
+										transition={transition}
+									>
+										<VStack spacing={5} align="stretch">
+											{postingsToDisplay.map(
+												(posting: JobPosting) => (
+													<VolunteerPosition
+														key={
+															posting.name +
+															posting.area +
+															posting.programs
+														}
+														posting={posting}
+														onSelected={(
+															posting
+														) => {
+															setSelectedPosition(
+																posting
+															);
+															onOpen();
+														}}
+														h="100%"
+													/>
+												)
+											)}
+										</VStack>
+									</motion.div>
+								) : null}
+								{selectedPosition && (isOpen || !isAnimated) ? (
+									<motion.div
+										key="right"
+										variants={{
+											enter: { x: 1000, opacity: 0 },
+											center: {
+												zIndex: 1,
+												x: 0,
+												opacity: 1,
+											},
+											exit: {
+												zIndex: 0,
+												x: 1000,
+												opacity: 0,
+												position: "absolute",
+											},
+										}}
+										initial="enter"
+										animate="center"
+										exit="exit"
+										transition={transition}
+									>
+										<VStack spacing={8} align="stretch">
+											{isAnimated ? (
+												<TimmyButton onClick={onClose}>
+													Back
+												</TimmyButton>
+											) : null}
+											<Stack
+												direction={{
+													base: "column",
+													lg: "row",
+												}}
+												bg="brand.darkerBlue"
+												rounded={25}
+												px={10}
+												py={6}
+											>
+												<VStack
+													align="stretch"
+													textAlign="left"
+													flex={1}
+												>
+													<Text fontSize="sm">
+														{selectedPosition.area}
+													</Text>
+													<Heading fontSize="lg">
+														{selectedPosition.name}
+													</Heading>
+													<Text fontSize="sm">
+														{selectedPosition.programs.join(
+															", "
+														)}
+													</Text>
+												</VStack>
+												<NextChakraLink
+													href={
+														selectedPosition.form ??
+														""
+													}
+												>
+													<TimmyButton
+														timmysrc="/timmy/10.png"
+														flex={1}
+													>
+														Apply Now
+													</TimmyButton>
+												</NextChakraLink>
+											</Stack>
+											<Box
+												bg="brand.darkerBlue"
+												rounded={25}
+												px={10}
+												py={6}
+												textAlign="left"
+											>
+												<Heading fontSize="xl" mb={2}>Description</Heading>
+												{selectedPosition.details}
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>What are we looking for?</Heading>
+												<Text ml={5}>
+												{selectedPosition.requirements ? replaceNewlines(
+													selectedPosition.requirements
+												) : <Text ml={-5}>Requirements coming soon</Text>}
+												</Text>
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>Job details</Heading>
+												<Text ml={5}>
+												{selectedPosition.responsibilities ? replaceNewlines(
+													selectedPosition.responsibilities
+												) : <Text ml={-5}>Job details coming soon</Text>}
+												</Text>
+											</Box>
+										</VStack>
+									</motion.div>
+								) : null}
+							</AnimatePresence>
+						</SimpleGrid>
+					</VStack>
 				</ContainerInside>
 			</Container>
 			<Box
@@ -312,41 +486,39 @@ export async function getStaticProps() {
 	};
 }
 
-type VolunteerPositionProps = JobPosting & StackProps;
+type VolunteerPositionProps = {
+	posting: JobPosting;
+	onSelected?: (posting: JobPosting) => void;
+} & StackProps;
 
+/**
+ * Creates a JSX element with the given information to show a volunteer position
+ *
+ * @param {VolunteerPositionProps} props the props to pass this component
+ * @param {JobPosting} props.posting the posting information to use
+ * @param {(posting: JobPosting) => void} props.onSelected the callback to invoke
+ * when this job posting is clicked
+ * @returns a JSX element that displays the given volunteer position
+ */
 function VolunteerPosition({
-	description,
-	rank,
-	form,
-	programs,
-	image,
-	area,
-	name,
+	posting,
+	onSelected,
 	...stackProps
 }: VolunteerPositionProps): JSX.Element {
-	const [hover, setHover] = useBoolean();
-	const transition = "all 0.15s ease-in";
+	const { programs, area, name } = posting;
 	return (
 		<Stack
 			spacing={0}
 			textAlign="left"
-			transition={transition}
-			transform={hover ? "scale(1.05)" : null}
+			transition="all 0.15s ease-in"
 			borderRadius="lg"
 			overflow="hidden"
 			bg="#5A60ADCC"
-			onMouseEnter={setHover.on}
-			onMouseLeave={setHover.off}
+			onClick={() => onSelected?.(posting)}
+			_hover={{ transform: "scale(0.97)", cursor: "pointer" }}
 			{...stackProps}
 		>
-			<Box
-				h={160}
-				p={4}
-				overflowY="hidden"
-				position="relative"
-				color={hover ? "white" : "transparent"}
-				transition={transition}
-			>
+			{/* <Box h={160} p={4} overflowY="hidden" position="relative">
 				<Box
 					position="absolute"
 					left={0}
@@ -356,11 +528,8 @@ function VolunteerPosition({
 					bg={image?.url ? `url(${image?.url})` : "#5A60ADCC"}
 					bgSize="cover"
 					bgPos="center"
-					opacity={hover ? 0.2 : 1}
-					transition={transition}
 				/>
-				<Text>{description}</Text>
-			</Box>
+			</Box> */}
 			<Stack
 				bg="brand.darkerBlue"
 				spacing={0}

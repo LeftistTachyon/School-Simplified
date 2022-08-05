@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 export type NotesProps = {
 	title: string;
 	file: FileObj;
 };
 
 export type Subject = {
-	title: string; // may be null
+	title: string | null;
 	content: Class[];
 };
 
@@ -14,13 +16,13 @@ export type Sponsor = {
 };
 
 export type Class = {
-	title: string; // may be null
+	title: string | null;
 	content: Unit[];
 	icon: {
 		type: string;
 		emoji?: string;
 		file?: FileObj;
-	}; // may be null
+	} | null;
 };
 
 export type Unit = {
@@ -177,7 +179,17 @@ export type JobPosting = {
 	 * An array of rich text objects that represents the description of the posting.
 	 * Please use the parseText in notion.ts to convert this any[] into a React element
 	 */
-	description: string;
+	details?: string;
+	/**
+	 * An array of rich text objects that represents the requirements of the posting.
+	 * Please use the parseText in notion.ts to convert this any[] into a React element
+	 */
+	requirements?: string;
+	/**
+	 * An array of rich text objects that represents the resposibilities of the posting.
+	 * Please use the parseText in notion.ts to convert this any[] into a React element
+	 */
+	responsibilities?: string;
 	/**
 	 * The rank of this posting, as a string
 	 */
@@ -206,10 +218,10 @@ export type JobPosting = {
 };
 
 /**
- * A type that represents an executive of School Simplified.
- * Contains all data that is necessary to display to the /leadership page
+ * A type that represents a person who has a biography on our website.
+ * Contains all data that is necessary to display a person card
  */
-export type Executive = {
+export type BiographyInfo = {
 	// ID is not included
 	/**
 	 * Their name, likely as a title case string in Latin letters
@@ -224,10 +236,6 @@ export type Executive = {
 	 * Try to keep this as a SS website link for optimal loading
 	 */
 	image?: FileObj;
-	/**
-	 * A copy/paste of the Notion-style rich text object that compose their tagline
-	 */
-	// tagline?: any[];
 	/**
 	 * An email that is connected with this person, if applicable
 	 */
@@ -253,10 +261,25 @@ export type Executive = {
 	 */
 	instagram?: string;
 	/**
-	 * A copy/paste of the Notion-style rich text objects that compose their bio
+	 * If the type field is `"notion"`, this carries a copy/paste of the
+	 * Notion-style rich text objects that compose their bio
+	 *
+	 * If the type field is `"react"`, this carries a `ReactNode` that
+	 * represents their bio
 	 */
-	biography?: any[];
+	biography?: BiographyData;
 };
+
+/**
+ * If the type field is `"notion"`, this carries a copy/paste of the
+ * Notion-style rich text objects that compose their bio
+ *
+ * If the type field is `"react"`, this carries a `ReactNode` that
+ * represents their bio
+ */
+export type BiographyData =
+	| { type: "notion"; data: any[] }
+	| { type: "react"; data: ReactNode };
 
 /**
  * A group of executives
@@ -269,7 +292,7 @@ export type ExecutiveGroup = {
 	/**
 	 * A list of executives under this group/category
 	 */
-	executives: Executive[];
+	executives: BiographyInfo[];
 };
 
 /**

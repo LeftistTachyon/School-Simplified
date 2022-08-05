@@ -1,7 +1,7 @@
 import { Heading, Wrap } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { Person } from "types";
+import type { Person } from "types";
 import SimplihacksCard from "./simplihackscard";
 
 const staff: Person[] = [
@@ -14,6 +14,16 @@ const staff: Person[] = [
 		name: "Jonathan Lin",
 		title: "Lead Organizer",
 		img: "/simplihacks/staff/jonathan.png",
+	},
+	{
+		name: "Reeva Khokhar",
+		title: "Operations Team",
+		img: "/simplihacks/staff/Reeva-Khokhar_Operations-Team.png",
+	},
+	{
+		name: "Ethan Barron",
+		title: "Operations Team",
+		img: "/simplihacks/staff/Ethan-Barron_Operations-Team.png",
 	},
 	{
 		name: "Roland Yang",
