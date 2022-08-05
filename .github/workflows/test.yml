@@ -1,0 +1,28 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [ "test" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+      
+      # Build the repo
+      - name: Build
+        run: npm run build
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+
+      -name: Test
+      run: npm run test
