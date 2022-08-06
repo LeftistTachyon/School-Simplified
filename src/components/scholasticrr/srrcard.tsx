@@ -24,7 +24,11 @@ export default function ScholasticRRCard({
 						rounded={20}
 						alt={`Image of ${name}, the ${title}`}
 						src={img}
-						style={{ aspectRatio: "1" }}
+						style={{
+							aspectRatio: "1",
+							width: "100%",
+							height: "100%",
+						}}
 						objectFit="cover"
 						objectPosition="center"
 					/>
