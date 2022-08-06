@@ -3,6 +3,7 @@ import {
 	Box,
 	Button,
 	Center,
+	Divider,
 	Heading,
 	Image,
 	Select,
@@ -23,6 +24,7 @@ import NextChakraLink from "@components/nextChakra";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { JobPosting } from "types";
+import { replaceNewlines } from "../util/parse_notion";
 
 const defaultOption: string = "Any/All";
 
@@ -439,7 +441,22 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 												py={6}
 												textAlign="left"
 											>
-												{selectedPosition.description}
+												<Heading fontSize="xl" mb={2}>Description</Heading>
+												{selectedPosition.details}
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>What are we looking for?</Heading>
+												<Text ml={5}>
+												{selectedPosition.requirements ? replaceNewlines(
+													selectedPosition.requirements
+												) : <Text ml={-5}>Requirements coming soon</Text>}
+												</Text>
+												<Divider my={5} />
+												<Heading fontSize="lg" mb={2}>Job details</Heading>
+												<Text ml={5}>
+												{selectedPosition.responsibilities ? replaceNewlines(
+													selectedPosition.responsibilities
+												) : <Text ml={-5}>Job details coming soon</Text>}
+												</Text>
 											</Box>
 										</VStack>
 									</motion.div>

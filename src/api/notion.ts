@@ -736,8 +736,15 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 				({ name }) => name
 			);
 			return {
-				description:
-					page.properties.Details.rich_text?.[0]?.plain_text ?? null,
+				details:
+					page.properties.Details.rich_text?.[0]?.plain_text ??
+					null,
+				requirements:
+					page.properties.Requirements.rich_text?.[0]?.plain_text ??
+					null,
+				responsibilities:
+					page.properties.Responsibilities.rich_text?.[0]?.plain_text ??
+					null,
 				rank: page.properties["Volunteer Type"].select?.name ?? null,
 				form: page.properties.Form?.url ?? null,
 				programs,

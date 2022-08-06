@@ -137,11 +137,11 @@ export default function StaffCard({
 						objectFit="cover"
 						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
 						width="100%"
 						height="100%"
-						// layout="intrinsic"
-						// placeholder="blur"
-						// blurDataURL={blurDataURL}
+						placeholder="blur"
 					/>
 				</Center>
 			) : (
@@ -151,11 +151,11 @@ export default function StaffCard({
 						objectFit="cover"
 						style={{ aspectRatio: "1", borderRadius: 30 }}
 						src={image?.url ?? "/staff/default.png"}
+						// layout="intrinsic"
+						// blurDataURL={blurDataURL}
 						width="100%"
 						height="100%"
-						// layout="intrinsic"
-						// placeholder="blur"
-						// blurDataURL={blurDataURL}
+						placeholder="blur"
 					/>
 				</Center>
 			)}
@@ -253,8 +253,11 @@ function BiographyModal({
 								placeContent="stretch"
 							>
 								<Image
+									// layout="intrinsic"
+									// blurDataURL={blurDataURL}
 									width="100%"
 									height="100%"
+									placeholder="blur"
 									alt={"Picture of " + name}
 									objectFit="cover"
 									style={{ aspectRatio: "1" }}
