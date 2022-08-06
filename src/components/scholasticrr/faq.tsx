@@ -50,7 +50,7 @@ const qaPairs: QAPair[] = [
 		question: "Who can compete?",
 		answer: [
 			{
-				text: "There is no age limit! There will, however, be two separate divisions - one for K-12 exclusively and the other for anyone. ",
+				text: "There is no age limit! However, there may only be one high school graduate per team.",
 				link: "",
 			},
 		],
@@ -76,7 +76,15 @@ const qaPairs: QAPair[] = [
 		question: "What if I don't have a team?",
 		answer: [
 			{
-				text: "In the discord, look for the team search channel and find a team!",
+				text: "In the ",
+				link: "",
+			},
+			{
+				text: "Discord server",
+				link: "https://discord.gg/school",
+			},
+			{
+				text: ", look for the team-search channel and find a team!",
 				link: "",
 			},
 		],
@@ -94,7 +102,7 @@ const qaPairs: QAPair[] = [
 		question: "When does this take place?",
 		answer: [
 			{
-				text: "There is no specific date set, but it will take place around the last week of July or first week of August.",
+				text: "It will take place October 2nd to 8th.",
 				link: "",
 			},
 		],

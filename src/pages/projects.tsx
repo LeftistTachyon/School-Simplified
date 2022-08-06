@@ -100,11 +100,10 @@ export default function Four(): JSX.Element {
 						Scholastic Relay Race
 					</Heading>
 					<Text py="15px" fontSize="22px" textAlign="left">
-						Looking to expand your knowledge or stay fresh over the
-						summer? Participate in this challenging
-						time-incentivized competition that caters toward
-						anyone’s interests. Form a team and focus on each of
-						your areas of expertise by tackling our five subjects!
+						Do you enjoy winning prizes, making new friends, and
+						learning? If so, this fun academic competition is just
+						the thing for you! Click the button below to learn more
+						about our Scholastic Relay Race competition.
 					</Text>
 					<Stack
 						direction={{ base: "column-reverse", lg: "row" }}
@@ -112,7 +111,7 @@ export default function Four(): JSX.Element {
 						spacing={50}
 					>
 						<VStack align="start" spacing={5}>
-							<Text fontSize="22px" textAlign="left">
+							{/* <Text fontSize="22px" textAlign="left">
 								Not only does the competition accommodate for
 								schedules by taking place over a whole week, but
 								it also offers different age categories to
@@ -124,7 +123,7 @@ export default function Four(): JSX.Element {
 								with your friends to win tons of prizes! Come
 								join us and experience a fun, engaging
 								competition!
-							</Text>
+							</Text> */}
 							<NextLink
 								isExternal
 								href="/scholasticrr"

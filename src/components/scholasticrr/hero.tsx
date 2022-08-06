@@ -59,8 +59,8 @@ export default function Hero(): JSX.Element {
 							<Text textAlign="left" fontSize="22px">
 								Not only does the competition accommodate for
 								schedules by taking place over a whole week, but
-								it also offers different age categories to
-								welcome any person who would like to compete.
+								it also offers the chance for people of any age
+								to participate.
 							</Text>
 							<Text textAlign="left" fontSize="22px">
 								The Scholastic Relay Race is a team-based,
