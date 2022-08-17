@@ -112,7 +112,7 @@ export default function Four(): JSX.Element {
 						spacing={50}
 					>
 						<VStack align="start" spacing={5}>
-							{/* <Text fontSize="22px" textAlign="left">
+							<Text fontSize="22px" textAlign="left">
 								Not only does the competition accommodate for
 								schedules by taking place over a whole week, but
 								it also offers different age categories to
@@ -124,7 +124,7 @@ export default function Four(): JSX.Element {
 								with your friends to win tons of prizes! Come
 								join us and experience a fun, engaging
 								competition!
-							</Text> */}
+							</Text> 
 							<NextLink
 								isExternal
 								href="/scholasticrr"
