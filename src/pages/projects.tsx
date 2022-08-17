@@ -91,7 +91,8 @@ export default function Four(): JSX.Element {
 					</HStack>
 				</ContainerInside>
 			</Container>
-			<Container py="50px">
+
+			{/* <Container py="50px">
 				<ContainerInside>
 					<Heading fontSize="35px" textAlign="left">
 						Upcoming Projects
@@ -137,7 +138,7 @@ export default function Four(): JSX.Element {
 						</VStack>
 					</Stack>
 				</ContainerInside>
-			</Container>
+			</Container> */}
 			<Container py="50px">
 				<ContainerInside>
 					<Heading fontSize="35px" textAlign="left">
