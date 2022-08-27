@@ -1,5 +1,7 @@
 # School Simplified
 
+**NOTE**: The active repository with the most recent changes is private, and this public repository is now inactive and archived. We appreciate you still stopping by!
+
 ## _Through learning, we empower the next generation to revolutionize the future._
 
 Come visit us at our website <https://schoolsimplified.org/> and our Discord at
